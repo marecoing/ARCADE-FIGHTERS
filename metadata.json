@@ -1,0 +1,6 @@
+{
+  "name": "Arcade Fighters '96: The Ultimate Tournament",
+  "description": "Videojuego de lucha 2D estilo arcade de 1996 con seis luchadores originales, combate a 60Hz, movimientos especiales, superataques, escenarios parallax y sonido sintetizado.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

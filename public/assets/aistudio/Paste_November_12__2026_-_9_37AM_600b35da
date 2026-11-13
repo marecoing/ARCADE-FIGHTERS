@@ -1,0 +1,877 @@
+# ARCADE FIGHTERS '96
+# PROMPT MAESTRO DE INTEGRACIÓN DE SPRITES PROFESIONALES
+
+## MISIÓN: TRANSFORMAR EL SISTEMA GRÁFICO EXISTENTE EN UN VERDADERO VIDEOJUEGO DE LUCHA ARCADE 2D
+
+Actuá como un equipo senior de desarrollo de videojuegos especializado en programación de motores gráficos 2D, animación de personajes mediante sprite sheets, renderizado HTML5 Canvas, diseño de combate, integración de recursos gráficos y optimización de videojuegos arcade.
+
+Estás trabajando sobre un proyecto existente llamado:
+
+**ARCADE FIGHTERS '96: THE ULTIMATE TOURNAMENT**
+
+El videojuego está inspirado artísticamente en los grandes títulos de lucha de los años 90, especialmente The King of Fighters '96, Street Fighter Alpha 2, Fatal Fury y Garou: Mark of the Wolves.
+
+### OBJETIVO CENTRAL
+
+He adjuntado seis imágenes originales que contienen hojas de sprites de los seis personajes jugables.
+
+**TU MISIÓN ES UTILIZAR ESAS IMÁGENES REALES COMO LOS RECURSOS GRÁFICOS DEFINITIVOS DE LOS PERSONAJES DEL VIDEOJUEGO.**
+
+Actualmente, el sistema gráfico puede utilizar figuras geométricas, dibujos procedimentales o representaciones simplificadas de los luchadores.
+
+Eso debe eliminarse completamente.
+
+Los personajes deben representarse mediante los sprites ilustrados que adjunté, conservando la calidad artística, las proporciones anatómicas, el vestuario, los rostros y los detalles originales.
+
+No quiero una simulación de las imágenes.
+
+No quiero personajes redibujados con círculos.
+
+No quiero aproximaciones visuales.
+
+**QUIERO QUE EL MOTOR DEL JUEGO RENDERICE LOS PÍXELES REALES DE LAS HOJAS DE SPRITES ADJUNTADAS.**
+
+---
+
+# FASE 1: INSPECCIÓN DE LOS RECURSOS ADJUNTADOS
+
+Antes de modificar código, examiná las seis imágenes.
+
+Cada una representa un personaje diferente:
+
+1. MOSTASA "THE MAST TURBAdOUR" CORGNALI.
+2. EL BRAIAN.
+3. THE LITLLE RAG.
+4. PATOVA MARCELO.
+5. JENNY EL TRAVESAÑO.
+6. THE ALIEN.
+
+Conservá los nombres ya definidos en los datos del juego, particularmente la escritura original de THE LITLLE RAG.
+
+Jenny El Travesaño es una mujer travesti argentina, tal como fue definida en el diseño original del juego.
+
+## Características de los archivos
+
+Las imágenes originales se generaron como hojas de sprites cuadradas de aproximadamente 1254 × 1254 píxeles.
+
+Cada hoja está organizada visualmente en una matriz de:
+
+- 4 columnas.
+- 4 filas.
+- 16 fotogramas.
+- Fondo transparente.
+- Personaje completo en cada celda.
+- Dirección principal del personaje hacia la derecha.
+
+Debés comprobar las dimensiones reales de cada archivo mediante programación.
+
+No asumir que todos tienen exactamente las mismas dimensiones sin inspeccionarlos.
+
+Las imágenes ya incluyen ilustraciones detalladas. No es necesario volver a generar los personajes.
+
+## Identificación visual
+
+Asigná cada hoja al personaje correcto inspeccionando su contenido:
+
+**MOSTASA:** hombre robusto, barba entrecana, remera negra con detalles amarillos, guantes y borcegos.
+
+**EL BRAIAN:** joven con gorra, conjunto deportivo azul y amarillo y zapatillas.
+
+**THE LITLLE RAG:** pequeño luchador punk con cabello rojizo, ropa remendada y zapatillas grandes.
+
+**PATOVA MARCELO:** hombre enorme y extremadamente musculoso, cabeza rapada y vestimenta negra.
+
+**JENNY EL TRAVESAÑO:** luchadora glamorosa, cabello largo, indumentaria fucsia y violeta, guantes plateados y botas altas.
+
+**THE ALIEN:** extraterrestre gris con cabeza grande, ojos negros y efectos energéticos verdes y azulados.
+
+No asignar las imágenes por el orden en que fueron recibidas sin verificar su contenido.
+
+No depender exclusivamente de los nombres de archivo.
+
+Si alguna imagen no está disponible físicamente en los archivos del proyecto, identificá esa limitación y conservá una referencia clara al recurso faltante. No simules que se integró correctamente.
+
+---
+
+# FASE 2: IMPORTACIÓN REAL DE LOS RECURSOS
+
+Debés convertir las seis imágenes adjuntas en recursos gráficos accesibles para la aplicación.
+
+Si el proyecto utiliza React, TypeScript y Vite, podés organizar los assets de esta forma:
+
+```text
+public/
+  assets/
+    fighters/
+      mostasa/
+        spritesheet.png
+      el_braian/
+        spritesheet.png
+      the_litlle_rag/
+        spritesheet.png
+      patova_marcelo/
+        spritesheet.png
+      jenny_el_travesano/
+        spritesheet.png
+      the_alien/
+        spritesheet.png
+```
+
+Los nombres anteriores son una estructura de destino sugerida, no nombres que debas suponer que ya existen.
+
+Crear efectivamente los archivos o sus referencias correctas.
+
+Implementar un sistema de carga y precarga de imágenes.
+
+El juego no debe comenzar un combate antes de que los sprites necesarios estén cargados y decodificados.
+
+### Requisitos obligatorios
+
+- Conservar la transparencia original.
+- Conservar los colores originales.
+- Evitar comprimir las imágenes con pérdida.
+- No convertir los recursos a JPEG.
+- No agregar fondos blancos o negros a los personajes.
+- No modificar los rostros.
+- No deformar las proporciones.
+- No eliminar los detalles del vestuario.
+- No sustituir una imagen ausente por un muñeco geométrico.
+- No depender de URLs temporales de las imágenes adjuntadas.
+
+Utilizar archivos PNG locales, importaciones válidas o recursos equivalentes empaquetados con la aplicación.
+
+Implementar control de errores y mostrar qué archivo no pudo cargarse si ocurre algún problema.
+
+---
+
+# FASE 3: EXTRACCIÓN DE LOS 16 FOTOGRAMAS
+
+Cada hoja de sprites contiene 16 imágenes diferentes del personaje.
+
+El motor debe extraer y reproducir esos fotogramas individualmente.
+
+## Organización de la hoja
+
+Interpretar inicialmente cada sprite sheet como una matriz de 4 × 4.
+
+| Fila | Fotogramas | Animación |
+|---|---|---|
+| 1 | 0 a 3 | Idle / posición de combate |
+| 2 | 4 a 7 | Caminar hacia adelante |
+| 3 | 8 a 11 | Puñetazo / ataque principal |
+| 4 | 12 a 15 | Patada / ataque principal |
+
+Para THE ALIEN, la tercera fila incluye una secuencia visual con efectos de energía psíquica, por lo que puede mapearse también a su ataque energético, respetando la lógica de combate existente.
+
+Esta distribución es la referencia inicial. Inspeccioná visualmente cada imagen para confirmar que las poses corresponden correctamente.
+
+## Extracción precisa
+
+No usar una única imagen completa como sprite.
+
+No dibujar simultáneamente los 16 fotogramas durante el combate.
+
+El personaje debe mostrar solamente el fotograma correspondiente a su estado y tiempo de animación.
+
+Como las dimensiones de los archivos pueden no ser divisibles exactamente por cuatro, calcular los límites utilizando coordenadas enteras.
+
+Para cada columna:
+
+```typescript
+const x0 = Math.round(col * image.width / 4);
+const x1 = Math.round((col + 1) * image.width / 4);
+const sourceWidth = x1 - x0;
+```
+
+Aplicar el mismo procedimiento a las filas.
+
+No perder columnas de píxeles ni generar líneas entre las celdas por errores de redondeo.
+
+### Advertencia sobre el recorte
+
+Las hojas fueron generadas mediante inteligencia artificial, por lo que la distribución visual puede presentar pequeñas diferencias entre los fotogramas.
+
+No asumir una alineación perfecta sin comprobarla.
+
+Para cada personaje:
+
+1. Detectar los límites reales de sus fotogramas.
+2. Comprobar que la cabeza no esté cortada.
+3. Comprobar que los pies permanezcan visibles.
+4. Comprobar que brazos y piernas extendidos no queden truncados.
+5. Ajustar márgenes cuando sea necesario.
+6. Mantener los efectos especiales asociados al personaje.
+7. Evitar que un fotograma capture partes del personaje de la celda vecina.
+
+Si existen irregularidades, utilizar metadatos individuales de recorte por fotograma.
+
+---
+
+# FASE 4: CREACIÓN DEL SPRITE ANIMATION ENGINE
+
+Crear o adaptar una clase central llamada:
+
+**SpriteAnimationController**
+
+Debe administrar el estado gráfico del personaje independientemente de la física del combate.
+
+Cada personaje debe disponer de:
+
+- Sprite sheet.
+- Fotograma actual.
+- Secuencia activa.
+- Tiempo acumulado.
+- Duración individual de fotogramas.
+- Dirección visual.
+- Escala.
+- Offset horizontal.
+- Offset vertical.
+- Punto de anclaje.
+- Transiciones entre animaciones.
+- Eventos sincronizados con fotogramas.
+
+## Ejemplo de estructura
+
+```typescript
+type AnimationName =
+  | "idle"
+  | "walkForward"
+  | "walkBackward"
+  | "lightPunch"
+  | "heavyPunch"
+  | "lightKick"
+  | "heavyKick"
+  | "jump"
+  | "crouch"
+  | "block"
+  | "hit"
+  | "knockdown"
+  | "special"
+  | "super"
+  | "victory"
+  | "defeat";
+
+interface FrameData {
+  sourceX: number;
+  sourceY: number;
+  sourceWidth: number;
+  sourceHeight: number;
+  offsetX: number;
+  offsetY: number;
+  durationMs: number;
+}
+
+interface SpriteAnimation {
+  frames: FrameData[];
+  loop: boolean;
+}
+```
+
+Adaptar esta estructura a la arquitectura actual del proyecto.
+
+No duplicar motores ni producir varios bucles de animación independientes.
+
+### Animaciones disponibles en las imágenes
+
+Las hojas adjuntas contienen principalmente:
+
+- Reposo.
+- Caminata.
+- Puñetazo o ataque equivalente.
+- Patada.
+
+Para las demás animaciones que requiere el motor, implementar una estrategia explícita de recursos adicionales.
+
+No declarar que las hojas incluyen sprites de salto, derrota, bloqueo o caída si esos dibujos no existen.
+
+Podés utilizar temporalmente poses apropiadas con transformaciones limitadas para mantener el juego funcional, pero no presentar esas sustituciones como animaciones originales completas.
+
+Si el entorno permite generar imágenes adicionales, crear nuevas poses tomando como referencia las hojas adjuntas, sin cambiar el aspecto de los personajes.
+
+El objetivo es que cada animación definitiva tenga sus propios fotogramas ilustrados.
+
+---
+
+# FASE 5: ESCALADO Y PROPORCIONES
+
+Los sprites deben integrarse en la resolución real del escenario.
+
+El juego utiliza una presentación de combate lateral, con una resolución lógica de referencia de 960 × 540 píxeles.
+
+Los luchadores deben ocupar una proporción visual coherente con los videojuegos de pelea arcade.
+
+## Alturas visuales objetivo
+
+Valores orientativos dentro del escenario de 540 píxeles de alto:
+
+- Mostasa: 250 píxeles.
+- El Braian: 240 píxeles.
+- The Litlle Rag: 165 píxeles.
+- Patova Marcelo: 290 píxeles.
+- Jenny El Travesaño: 260 píxeles.
+- The Alien: 255 píxeles.
+
+Estos valores pueden ajustarse para coincidir con el tamaño del escenario y con las dimensiones reales de los sprites.
+
+### Regla fundamental
+
+**Nunca escalar deformando el ancho independientemente de la altura.**
+
+Conservar la relación de aspecto de las ilustraciones.
+
+No estirar los cuerpos.
+
+No agrandar las cabezas artificialmente.
+
+No convertir personajes robustos en delgados ni viceversa.
+
+La escala debe resultar de la silueta real del personaje, descontando los márgenes transparentes del fotograma.
+
+---
+
+# FASE 6: ANCLAJE Y ESTABILIDAD VISUAL
+
+Todos los fotogramas deben conservar un punto de referencia consistente.
+
+Utilizar preferentemente un anclaje inferior correspondiente al contacto de los pies con el piso.
+
+El personaje debe mantenerse apoyado sobre el escenario al cambiar de fotograma.
+
+## Errores que debés evitar
+
+- Personajes que suben y bajan accidentalmente.
+- Personajes cuyos pies atraviesan el suelo.
+- Saltos visuales entre fotogramas.
+- Cambios repentinos de tamaño.
+- Desplazamientos horizontales involuntarios.
+- Personajes flotando.
+- Pies que se desplazan por errores de recorte.
+
+Utilizar offsets individuales para compensar pequeñas diferencias en el dibujo.
+
+El movimiento horizontal debe depender de la posición calculada por el motor físico, no del margen transparente de cada fotograma.
+
+Las animaciones de reposo pueden mostrar una oscilación corporal natural, pero sin desplazar arbitrariamente al luchador por el escenario.
+
+---
+
+# FASE 7: DIRECCIÓN DEL PERSONAJE
+
+Los sprites están dibujados principalmente mirando hacia la derecha.
+
+El juego debe permitir enfrentar a los personajes desde ambos lados.
+
+Implementar inversión horizontal del sprite cuando corresponda.
+
+Utilizar una transformación gráfica equivalente a:
+
+```typescript
+ctx.save();
+
+ctx.translate(screenX, screenY);
+ctx.scale(facingRight ? 1 : -1, 1);
+
+// Renderizar el fotograma centrado sobre su ancla.
+
+ctx.restore();
+```
+
+Adaptar correctamente el sistema de coordenadas al dibujo real del sprite.
+
+La transformación no debe invertir el mundo, los fondos ni la interfaz.
+
+Solamente el personaje correspondiente.
+
+Las hitboxes deben mantener la orientación correcta independientemente de que el dibujo esté espejado.
+
+Evitar invertir dos veces personajes que ya tengan una orientación aplicada.
+
+---
+
+# FASE 8: SUSTITUCIÓN DEL RENDERIZADO ANTERIOR
+
+Este es uno de los requisitos más importantes del proyecto.
+
+Identificá las funciones que actualmente dibujan personajes mediante:
+
+- Círculos.
+- Rectángulos.
+- Líneas.
+- Óvalos.
+- Polígonos elementales.
+- Esqueletos geométricos.
+- Brazos y piernas de formas básicas.
+- Dibujos procedimentales simplificados.
+
+Eliminá su uso como representación visible de los luchadores.
+
+Reemplazá el renderizado por llamadas a drawImage() utilizando exclusivamente las hojas de sprites adjuntadas.
+
+Ejemplo conceptual:
+
+```typescript
+ctx.drawImage(
+  spriteSheet,
+  frame.sourceX,
+  frame.sourceY,
+  frame.sourceWidth,
+  frame.sourceHeight,
+  destX,
+  destY,
+  destWidth,
+  destHeight
+);
+```
+
+La implementación debe considerar correctamente los puntos de anclaje, offsets y transformaciones.
+
+La geometría interna puede continuar utilizándose para:
+
+- Hitboxes.
+- Hurtboxes.
+- Física.
+- Detección de colisiones.
+- Áreas de interacción.
+- Herramientas de depuración.
+
+Pero no debe aparecer como cuerpo visible del personaje.
+
+**EL RESULTADO VISUAL TIENE QUE SER EXACTAMENTE LA ILUSTRACIÓN ADJUNTADA, ANIMADA MEDIANTE FOTOGRAMAS.**
+
+---
+
+# FASE 9: SINCRONIZACIÓN DE ATAQUES Y SPRITES
+
+El sistema de combate debe estar vinculado con el nuevo motor de animaciones.
+
+Ejemplo: Mostasa ejecuta un puñetazo.
+
+1. El jugador presiona el botón de ataque.
+2. El motor cambia al estado de puñetazo.
+3. Se reproduce el fotograma de preparación.
+4. El personaje extiende el brazo mediante el sprite correspondiente.
+5. En los frames activos se habilita la hitbox del puño.
+6. Si la hitbox conecta con el adversario, se aplica el daño.
+7. Se reproduce el sonido del impacto.
+8. Se muestran las partículas.
+9. El adversario entra en su estado de reacción.
+10. Se reproducen los fotogramas de recuperación.
+11. El personaje vuelve a su animación de reposo.
+
+El daño nunca debe producirse antes de que el golpe alcance visualmente al oponente, salvo diferencias mínimas justificadas por las reglas del combate.
+
+### Frame data
+
+Mantener las propiedades originales del sistema de combate:
+
+- Startup.
+- Active frames.
+- Recovery.
+- Hitstun.
+- Blockstun.
+- Knockback.
+- Damage.
+- Cancel windows.
+- Super meter.
+
+La animación visual debe respetar los tiempos del movimiento.
+
+Si la animación tiene cuatro dibujos, distribuir sus tiempos correctamente entre preparación, impacto, recuperación y retorno.
+
+No es obligatorio mostrar cada fotograma durante exactamente la misma cantidad de milisegundos.
+
+---
+
+# FASE 10: HITBOXES Y HURTBOXES ADAPTADAS
+
+El reemplazo de personajes exige recalibrar las áreas de colisión.
+
+No conservar ciegamente las dimensiones anteriores si estaban basadas en muñecos geométricos.
+
+Cada personaje debe tener una zona corporal aproximada coherente con su ilustración.
+
+Implementar:
+
+- Hitbox corporal.
+- Hurtbox de torso.
+- Hurtbox de cabeza.
+- Áreas de impacto de manos.
+- Áreas de impacto de piernas.
+- Detección de bloqueos.
+- Colisión contra el suelo.
+- Separación física entre personajes.
+
+Las hitboxes deben definirse en coordenadas locales del luchador.
+
+Al invertir el personaje, también deben transformarse sus posiciones de ataque.
+
+### Ejemplo
+
+Durante el tercer fotograma de una patada, la hitbox activa debe cubrir el pie extendido y la zona de impacto correspondiente.
+
+No dejar la hitbox en la posición inicial mientras el pie se encuentra extendido.
+
+Para The Litlle Rag, ajustar el tamaño de las hurtboxes a su cuerpo más pequeño.
+
+Para Patova Marcelo, adaptar las áreas de impacto a sus extremidades más grandes.
+
+Para The Alien, considerar el alcance de brazos, piernas y proyectiles.
+
+---
+
+# FASE 11: IMPLEMENTACIÓN ESPECÍFICA POR PERSONAJE
+
+## MOSTASA
+
+Utilizar su hoja de sprites original para:
+
+- Guardia y respiración.
+- Caminata.
+- Puñetazo.
+- Patada.
+
+Conservar:
+
+- Barba entrecana.
+- Remera negra y amarilla.
+- Guantes.
+- Cuerpo robusto.
+- Pantalones oscuros.
+- Borcegos.
+
+Sus movimientos deben transmitir fuerza y precisión de boxeo.
+
+## EL BRAIAN
+
+Utilizar su hoja azul y amarilla.
+
+Conservar gorra, conjunto deportivo y zapatillas.
+
+Su caminata debe ser veloz.
+
+Los ataques deben reproducirse rápidamente y transmitir agilidad.
+
+## THE LITLLE RAG
+
+Utilizar su hoja de sprites del muñeco punk rojizo.
+
+Conservar cuerpo pequeño, cabello llamativo, ropa remendada y guantes grandes.
+
+No agrandarlo para que alcance la misma estatura que Patova Marcelo.
+
+Su silueta pequeña es parte fundamental de su identidad.
+
+## PATOVA MARCELO
+
+Utilizar su sprite de hombre extremadamente musculoso.
+
+Conservar cabeza rapada, torso enorme, ropa oscura y botas.
+
+La velocidad de las animaciones debe transmitir masa corporal.
+
+Los golpes deben sentirse contundentes.
+
+## JENNY EL TRAVESAÑO
+
+Utilizar la hoja de sprites de la luchadora glamorosa.
+
+Conservar cabello largo, vestimenta fucsia y violeta, botas y guantes.
+
+Sus movimientos deben ser elegantes, veloces y expresivos.
+
+No modificar su diseño original ni convertirla en otro personaje.
+
+## THE ALIEN
+
+Utilizar el sprite del extraterrestre gris.
+
+Conservar cabeza, ojos, extremidades y detalles luminosos.
+
+La tercera secuencia de su hoja contiene un ataque de energía.
+
+Aprovechar esos fotogramas para implementar su movimiento psíquico.
+
+Cuando se ejecute un proyectil independiente, separar correctamente la representación del alienígena y los efectos del proyectil si fuera necesario.
+
+---
+
+# FASE 12: PREVISUALIZADOR DE ANIMACIONES
+
+Antes de integrar definitivamente los sprites en combate, construir una herramienta interna de inspección gráfica.
+
+Debe permitir:
+
+- Elegir cualquiera de los seis personajes.
+- Seleccionar una animación.
+- Reproducirla.
+- Pausarla.
+- Avanzar un fotograma.
+- Retroceder un fotograma.
+- Ajustar la velocidad.
+- Inspeccionar la transparencia.
+- Visualizar el punto de anclaje.
+- Ver los límites del fotograma.
+- Mostrar hitboxes y hurtboxes.
+- Verificar la orientación.
+- Comprobar la escala.
+
+Este visualizador puede formar parte del modo desarrollador.
+
+Debe mostrar la imagen REAL cargada.
+
+No sustituir los recursos con una representación aproximada.
+
+### Prueba visual crítica
+
+Poner los seis personajes sobre una línea de suelo común.
+
+Verificar que:
+
+1. Todos estén correctamente ilustrados.
+2. Todos tengan su escala adecuada.
+3. Sus pies estén apoyados.
+4. Sus animaciones funcionen.
+5. Su identidad visual sea consistente.
+6. Ningún personaje se transforme o deforme al cambiar de pose.
+
+---
+
+# FASE 13: CONSERVACIÓN DEL VIDEOJUEGO ORIGINAL
+
+No reconstruir el proyecto desde cero.
+
+No eliminar las funcionalidades existentes.
+
+Mantener:
+
+- Menú principal.
+- Selección de personajes.
+- Modo Arcade.
+- Modo Versus.
+- Modo contra CPU.
+- Modo entrenamiento.
+- Inteligencia artificial.
+- Controles.
+- Combos.
+- Ataques especiales.
+- Barras de energía.
+- Sistema de rounds.
+- Pantallas de victoria.
+- Escenarios.
+- Sonidos.
+- Efectos visuales.
+
+Actualizar solamente los componentes que necesiten adaptarse al nuevo sistema gráfico.
+
+Si hay que modificar el motor de combate para alinear las colisiones, hacerlo sin alterar innecesariamente las reglas originales.
+
+Mantener el proyecto compilable y funcional durante la integración.
+
+---
+
+# FASE 14: ANIMACIONES QUE FALTAN
+
+Las seis hojas adjuntas constituyen el conjunto inicial de recursos gráficos.
+
+No contienen necesariamente todas las poses que necesita un juego de pelea completo.
+
+Identificar expresamente las animaciones faltantes:
+
+- Salto.
+- Agacharse.
+- Bloqueo.
+- Daño recibido.
+- Caída.
+- Recuperación.
+- Agarre.
+- Victoria.
+- Derrota.
+- Ataques especiales adicionales.
+- Superataques.
+
+No inventar que esos dibujos existen.
+
+Si es posible generar ilustraciones nuevas desde el entorno, utilizar los sprites originales como referencias obligatorias.
+
+Las imágenes nuevas deben conservar:
+
+- Misma cara.
+- Misma vestimenta.
+- Mismo peinado.
+- Mismos colores.
+- Misma anatomía.
+- Mismo estilo.
+- Mismo tamaño relativo.
+- Misma dirección artística.
+
+Las animaciones adicionales deben integrarse progresivamente sin sustituir los recursos que ya existen.
+
+Si la herramienta no puede generar las ilustraciones faltantes, crear una implementación transitoria claramente identificada y mantener una lista de los recursos que todavía deben producirse.
+
+Nunca regresar a muñecos geométricos.
+
+---
+
+# FASE 15: RENDIMIENTO
+
+Optimizar el motor para ejecutar el juego a 60 FPS en equipos de escritorio compatibles.
+
+Aplicar:
+
+- Precarga de imágenes.
+- Caché de fotogramas cuando sea conveniente.
+- Evitar recortes costosos en cada frame si pueden preprocesarse.
+- Evitar reconstruir objetos gráficos constantemente.
+- Usar un único game loop.
+- Separar actualización física y renderizado.
+- Evitar renders innecesarios de React.
+- Liberar recursos al desmontar componentes.
+- Controlar las transformaciones de Canvas mediante save() y restore().
+- Utilizar correctamente devicePixelRatio.
+- Configurar imageSmoothingEnabled según la escala y estética pixel art.
+
+La animación no debe acelerarse cuando el monitor supere 60 Hz.
+
+El movimiento debe depender de los tiempos de simulación y no de la cantidad de llamadas de renderizado.
+
+---
+
+# FASE 16: TESTING Y VALIDACIÓN
+
+Ejecutar pruebas reales sobre la aplicación.
+
+Comprobar:
+
+1. Carga correcta de los seis PNG.
+2. Detección de dimensiones.
+3. Extracción de las 16 celdas de cada hoja.
+4. Transparencia correcta.
+5. Ausencia de fondos artificiales.
+6. Ausencia de recortes de cabeza, manos y pies.
+7. Anclaje estable.
+8. Escalado proporcional.
+9. Animación de reposo.
+10. Animación de caminata.
+11. Animación de puñetazo.
+12. Animación de patada.
+13. Inversión de orientación.
+14. Hitboxes correctamente alineadas.
+15. Aplicación de daño.
+16. Movimientos especiales.
+17. Funcionamiento de la CPU.
+18. Cambio entre rounds.
+19. Cambio entre personajes.
+20. Funcionamiento de las pantallas originales.
+21. Ausencia de errores de carga.
+22. Ausencia de personajes geométricos visibles.
+23. Funcionamiento del juego después de modificar el renderizador.
+24. Ausencia de sprites superpuestos por errores de extracción.
+25. Correcta recuperación visual después de terminar un ataque.
+
+No afirmar que las pruebas se realizaron si el entorno no permite ejecutarlas.
+
+Resolver los errores detectados antes de considerar la integración completada.
+
+---
+
+# FASE 17: CRITERIOS DE ACEPTACIÓN
+
+La implementación será satisfactoria únicamente si:
+
+**A.** Los seis personajes utilizan sus imágenes adjuntadas.
+
+**B.** Ninguno aparece como un muñeco construido por círculos o líneas.
+
+**C.** Las imágenes están integradas al código como recursos reales.
+
+**D.** Los sprites se reproducen mediante fotogramas individuales.
+
+**E.** El personaje camina, golpea y patea utilizando sus ilustraciones originales.
+
+**F.** Las animaciones respetan el sistema de combate.
+
+**G.** Las colisiones se mantienen funcionales.
+
+**H.** Las proporciones originales de los personajes se conservan.
+
+**I.** El juego mantiene sus escenarios, menús y modos existentes.
+
+**J.** El resultado funciona en la vista previa.
+
+**K.** No existen referencias rotas ni imágenes ausentes presentadas como cargadas.
+
+**L.** Las animaciones faltantes se informan claramente y no se simulan como completas.
+
+---
+
+# FASE 18: ENTREGA DE LA IMPLEMENTACIÓN
+
+No te limites a explicar cómo debería funcionar.
+
+Debés modificar realmente el código del proyecto.
+
+Orden de trabajo:
+
+**PASO 1:** inspeccionar los archivos actuales y localizar el renderizador de personajes.
+
+**PASO 2:** inspeccionar las seis imágenes adjuntadas e identificar cada personaje.
+
+**PASO 3:** incorporarlas a los recursos de la aplicación.
+
+**PASO 4:** desarrollar la extracción precisa de fotogramas.
+
+**PASO 5:** implementar el controlador de animaciones.
+
+**PASO 6:** sustituir la representación geométrica de los personajes.
+
+**PASO 7:** calibrar escalas y puntos de anclaje.
+
+**PASO 8:** sincronizar ataques e impactos.
+
+**PASO 9:** adaptar colisiones.
+
+**PASO 10:** comprobar los seis personajes en el visualizador.
+
+**PASO 11:** probar partidas reales contra la CPU.
+
+**PASO 12:** corregir los errores y dejar la aplicación ejecutable.
+
+Al finalizar, entregar un resumen verificable de:
+
+- Recursos importados.
+- Archivos modificados.
+- Animaciones implementadas.
+- Problemas corregidos.
+- Animaciones que aún necesitan nuevas ilustraciones.
+- Pruebas realizadas.
+- Limitaciones pendientes.
+
+---
+
+# INSTRUCCIÓN FINAL DE MÁXIMA PRIORIDAD
+
+**LAS IMÁGENES ADJUNTADAS SON LOS RECURSOS VISUALES OFICIALES DEL VIDEOJUEGO.**
+
+No son ejemplos.
+
+No son sugerencias.
+
+No son referencias opcionales.
+
+**SON LOS SPRITES QUE DEBEN APARECER REALMENTE EN PANTALLA.**
+
+El trabajo consiste en integrarlos técnicamente en ARCADE FIGHTERS '96 sin perder su calidad artística.
+
+No acepto como resultado una reconstrucción geométrica, un personaje estático desplazándose por la pantalla ni una página que solamente muestre las hojas de sprites.
+
+Quiero un sistema de animación que utilice esos fotogramas en tiempo real y que permita combatir con los personajes ilustrados.
+
+La experiencia visual debe recordar a los videojuegos de lucha arcade profesionales de los años 90.
+
+Conservá la identidad gráfica original de:
+
+MOSTASA, EL BRAIAN, THE LITLLE RAG, PATOVA MARCELO, JENNY EL TRAVESAÑO y THE ALIEN.
+
+**COMENZÁ INSPECCIONANDO EL PROYECTO EXISTENTE Y LAS SEIS IMÁGENES ADJUNTADAS. DESPUÉS MODIFICÁ EL CÓDIGO PARA QUE ESOS SEIS PERSONAJES ILUSTRADOS SEAN LOS LUCHADORES REALES DEL VIDEOJUEGO.**
+
+No des por completada la tarea hasta comprobar que los sprites adjuntados aparecen correctamente dentro de combates jugables.

@@ -1,0 +1,1027 @@
+# PROMPT MAESTRO: ARCADE FIGHTERS '96
+## Desarrollo integral de videojuego de lucha 2D estilo arcade de los años 90
+
+### 1. OBJETIVO PRINCIPAL
+
+Actuá como un estudio profesional de desarrollo de videojuegos especializado en juegos de lucha arcade 2D, compuesto por programadores senior, diseñadores de combate, artistas de pixel art, animadores, especialistas en inteligencia artificial, diseñadores de interfaces y técnicos de sonido.
+
+Tu misión es **crear un videojuego de lucha 2D completamente funcional, visualmente elaborado y jugable desde el navegador**, inspirado en la época dorada de los videojuegos arcade de 1991 a 1999.
+
+**Nombre del videojuego: ARCADE FIGHTERS '96: THE ULTIMATE TOURNAMENT**
+
+Referencias de estilo y calidad:
+
+- Street Fighter II: Champion Edition (1992).
+- Super Street Fighter II Turbo (1994).
+- The King of Fighters '96 (1996).
+- Mortal Kombat 3 (1995).
+- Street Fighter Alpha 2 (1996).
+
+Estas referencias sirven para transmitir la calidad artística, las sensaciones del combate, el ritmo, la presentación y la estética. Todos los personajes, sprites, escenarios, sonidos y elementos visuales deberán ser originales. No copiar material protegido de otros videojuegos.
+
+**REQUISITO ABSOLUTO: NO CREAR UNA DEMOSTRACIÓN ESTÁTICA, UN PROTOTIPO SIMPLIFICADO NI UNA MAQUETA VISUAL. EL RESULTADO DEBE SER UN VIDEOJUEGO REAL, INTERACTIVO, FUNCIONAL Y JUGABLE.**
+
+Si es necesario reducir funciones secundarias para lograrlo, priorizá la calidad y funcionamiento del combate.
+
+---
+
+### 2. TECNOLOGÍA Y ARQUITECTURA
+
+Desarrollar como aplicación web ejecutable en Google AI Studio, utilizando:
+
+- React y TypeScript para interfaces y organización.
+- HTML5 Canvas 2D para renderizado del combate.
+- Web Audio API para generar o reproducir sonido.
+- requestAnimationFrame para actualizar la simulación y dibujar.
+- CSS para menús, presentación y escalado responsive.
+- Almacenamiento local para opciones y estadísticas.
+- Arquitectura modular con separación entre lógica, física, animaciones, controles, interfaz y audio.
+
+Utilizar un game loop de actualización fija a 60 Hz, independiente de la frecuencia de renderizado.
+
+Resolución lógica de referencia: 960 × 540 píxeles, relación 16:9.
+
+Renderizado adaptable al tamaño de pantalla y a la densidad de píxeles.
+
+El juego debe funcionar sin necesidad de servidores externos, claves API, cuentas de usuario ni servicios pagos.
+
+Los controles deben responder inmediatamente. No debe existir latencia perceptible entre pulsar una tecla y ejecutar una acción.
+
+Implementar detección de colisiones real, gravedad, estados de combate, gestión de energía e inteligencia artificial.
+
+No sustituir el videojuego por un conjunto de imágenes generadas.
+
+---
+
+### 3. DIRECCIÓN ARTÍSTICA
+
+#### Estética general
+
+El videojuego debe parecer una auténtica máquina recreativa de 1996.
+
+Características:
+
+- Gráficos 2D con estética pixel art de alta calidad.
+- Personajes grandes y bien definidos.
+- Sprites con contornos, sombras y volumen muscular.
+- Animaciones fluidas y expresivas.
+- Colores intensos y saturados.
+- Escenarios detallados con profundidad.
+- Efectos visuales de golpes, fuego, electricidad, energía y partículas.
+- Desplazamiento horizontal de cámara.
+- Fondos animados con efecto parallax.
+- Sombras dinámicas debajo de los personajes.
+- Interfaces con bordes cromados, tipografía arcade y colores contrastantes.
+- Efectos opcionales de monitor CRT, scanlines y ligero brillo fósforo.
+
+Los luchadores deben tener anatomía reconocible, proporciones consistentes, vestimenta diferenciada, articulaciones animadas y posturas de combate convincentes.
+
+**Prohibición:** no resolver los personajes mediante rectángulos, círculos simples, figuras geométricas sin detalle, imágenes inmóviles que se deslizan o muñecos articulados toscos.
+
+Si no hay recursos gráficos externos disponibles, generar sprites originales programáticamente mediante Canvas, con capas, contornos, sombreado y fotogramas de animación diferenciados.
+
+Cada animación debe modificar realmente las posiciones del torso, brazos, piernas y cabeza.
+
+Los movimientos tienen que parecer golpes reales, exagerados con el dramatismo típico de los juegos arcade.
+
+---
+
+### 4. LOS SEIS PERSONAJES JUGABLES
+
+Crear exactamente seis luchadores iniciales, todos seleccionables y con habilidades, animaciones, personalidad y estadísticas propias.
+
+## PERSONAJE 1: MOSTASA "THE MAST TURBADOUR" CORGNALI
+
+**Arquetipo:** peleador de fuerza y técnica equilibrada.
+
+**Origen:** Reconquista, Santa Fe, Argentina.
+
+**Apariencia:**
+- Hombre argentino adulto, aproximadamente 44 años.
+- Cabello castaño oscuro con algunas canas.
+- Barba entrecana.
+- Físico fuerte, robusto y atlético.
+- Expresión desafiante y ligeramente burlona.
+- Remera negra sin mangas con estética heavy metal.
+- Pantalón oscuro y borcegos.
+- Guantes de combate.
+- Detalles de color amarillo mostaza en su indumentaria.
+
+**Personalidad:** provocador, sarcástico, confiado y aficionado al heavy metal.
+
+**Estilo de combate:** boxeo combinado con artes marciales y golpes de fuerza.
+
+Movimientos especiales:
+
+1. **MOSTAZA PUNCH:** puñetazo potente con un efecto explosivo amarillo.
+2. **TURBADO UPPERCUT:** gancho ascendente que lanza al adversario por el aire.
+3. **METAL KICK:** patada giratoria acompañada de efectos eléctricos.
+4. **THE MAST TURBADOUM:** movimiento especial definitivo. El personaje acumula energía amarilla y descarga una combinación brutal de puñetazos y patadas, terminando con una explosión de energía al ritmo de un riff de heavy metal original.
+
+**Frase inicial:** "¡Te voy a acomodar las ideas a trompadas!"
+
+**Frase de victoria:** "¡Andá a practicar, papá!"
+
+**Escenario personal:** un gimnasio de boxeo del litoral argentino, con bolsas de arena, carteles de recitales de metal, ventiladores, espectadores y luces fluorescentes.
+
+## PERSONAJE 2: EL BRAIAN
+
+**Arquetipo:** luchador veloz y especialista en combinaciones.
+
+**Apariencia:**
+- Joven argentino de barrio.
+- Gorra deportiva.
+- Conjunto deportivo llamativo.
+- Zapatillas de colores.
+- Cabello corto.
+- Postura relajada y desafiante.
+- Animaciones rápidas y elásticas.
+
+**Estilo de combate:** patadas veloces, saltos, fintas y combinaciones sorpresivas.
+
+Movimientos especiales:
+
+1. **WACHÍN DASH:** desplazamiento extremadamente rápido seguido de un golpe.
+2. **TURBO PATADA:** sucesión de tres patadas giratorias.
+3. **ALTO COMBO:** combinación veloz de cinco golpes.
+4. **LA SECUENCIA DEL BARRIO:** movimiento definitivo que ejecuta una coreografía de ataques ultrarrápidos y finaliza con una patada voladora espectacular.
+
+**Frase inicial:** "¿Qué onda, gato? ¿Te la bancás?"
+
+**Frase de victoria:** "¡Nos vimos, maestro!"
+
+**Escenario personal:** esquina de un barrio argentino nocturno, con kiosco iluminado, mural de arte urbano, motos estacionadas y espectadores.
+
+## PERSONAJE 3: THE LITLLE RAG
+
+**Arquetipo:** personaje pequeño, impredecible y extremadamente ágil.
+
+Conservar exactamente el nombre **THE LITLLE RAG**, incluyendo su escritura.
+
+**Apariencia:**
+- Criatura humanoide pequeña y caricaturesca.
+- Inspiración visual en un muñeco de trapo punk de los años 90.
+- Cabello desordenado.
+- Ojos grandes y expresivos.
+- Guantes de combate desproporcionadamente grandes.
+- Zapatillas enormes.
+- Ropa remendada.
+- Movimientos acrobáticos, ridículos y rápidos.
+
+**Estilo de combate:** ataques bajos, saltos inesperados y acrobacias.
+
+Movimientos especiales:
+
+1. **RAG TORNADO:** gira a gran velocidad golpeando repetidamente al enemigo.
+2. **LITTLE MISSILE:** salta y se proyecta horizontalmente contra el adversario.
+3. **RAG SHADOW:** realiza una finta que deja una imagen residual.
+4. **THE ULTIMATE RAG:** movimiento definitivo en el que genera una tormenta de retazos, aparece desde distintas posiciones y encadena múltiples impactos.
+
+**Frase inicial:** "¡No te confíes del tamaño!"
+
+**Frase de victoria:** "¡Te ganó un trapo!"
+
+**Escenario personal:** depósito abandonado lleno de juguetes, máquinas arcade, cajas, televisores antiguos y luces intermitentes.
+
+## PERSONAJE 4: PATOVA MARCELO
+
+**Arquetipo:** tanque, luchador lento y extraordinariamente fuerte.
+
+**Apariencia:**
+- Hombre enorme y extremadamente musculoso.
+- Cabeza rapada.
+- Cuello grueso.
+- Brazos gigantes.
+- Remera negra ajustada.
+- Pantalón oscuro.
+- Botas.
+- Expresión severa.
+- Brazos cruzados en su presentación inicial.
+
+**Estilo de combate:** lucha cuerpo a cuerpo, agarres, derribos y golpes demoledores.
+
+Movimientos especiales:
+
+1. **CONTROL DE ACCESO:** agarra al oponente y lo arroja violentamente.
+2. **PORTAZO:** carga frontal con el hombro.
+3. **PATADA DEL BOLICHE:** patada frontal de gran potencia.
+4. **NO ESTÁS EN LA LISTA:** ataque definitivo: sujeta al rival, ejecuta una secuencia de agarres y lo lanza contra el suelo con una onda expansiva.
+
+**Frase inicial:** "Con esas zapatillas no entrás."
+
+**Frase de victoria:** "Circulá, maestro."
+
+**Escenario personal:** entrada de un boliche argentino de los años 90, con luces de neón, una fila de personas, porteros, autos estacionados y música electrónica.
+
+## PERSONAJE 5: JENNY EL TRAVESAÑO
+
+**Arquetipo:** especialista en patadas, evasión y movimientos elegantes.
+
+**Identidad obligatoria:** Jenny es una mujer travesti argentina. Su identidad debe ser explícita en la biografía del personaje, sin tratarla como un disfraz, una transformación ni una broma. Su presencia debe ser carismática, provocadora y poderosa, con el mismo protagonismo y calidad de combate que los demás luchadores.
+
+**Apariencia:**
+- Mujer travesti adulta.
+- Alta y atlética.
+- Cabello largo y voluminoso.
+- Maquillaje teatral.
+- Vestuario de combate glamoroso.
+- Botas estilizadas adaptadas al combate.
+- Guantes brillantes.
+- Detalles de color fucsia, violeta y plateado.
+- Movimientos seguros, elegantes y expresivos.
+
+**Estilo de combate:** kickboxing, ataques giratorios, patadas largas y técnicas evasivas.
+
+Movimientos especiales:
+
+1. **TACÓN METEORO:** patada descendente con efectos fucsias.
+2. **GLAMOUR SPIN:** giro rápido con una serie de patadas.
+3. **FLASH DE NEÓN:** movimiento evasivo con destello luminoso y contraataque.
+4. **LA REINA DEL RING:** ataque definitivo con múltiples patadas aéreas, efectos de luz rosa y violeta y una pose final triunfal.
+
+**Frase inicial:** "Dale, mi amor, mostrame lo que sabés."
+
+**Frase de victoria:** "¡Te faltó glamour, corazón!"
+
+**Escenario personal:** un escenario nocturno de variedades con neones, espejos, reflectores, humo escénico y público animado.
+
+## PERSONAJE 6: THE ALIEN
+
+**Arquetipo:** luchador de larga distancia especializado en energía y control espacial.
+
+**Apariencia:**
+- Extraterrestre gris clásico.
+- Piel gris pálida.
+- Cabeza grande y alargada.
+- Ojos negros ovalados enormes.
+- Boca diminuta.
+- Brazos y piernas largos, muy delgados.
+- Tres dedos en cada mano.
+- Movimientos inquietantes, no humanos.
+- Efectos luminosos de energía verde y azul.
+
+**Estilo de combate:** artes marciales extraterrestres, energía psíquica, teletransportación y proyectiles.
+
+Movimientos especiales:
+
+1. **PSI BLAST:** proyectil de energía verde.
+2. **AREA 51 TELEPORT:** teletransportación corta para esquivar ataques.
+3. **GRAVITY PUNCH:** golpe que genera una onda gravitatoria.
+4. **ABDUCCIÓN TOTAL:** ataque definitivo donde aparece un platillo volador, un rayo tractor eleva temporalmente al oponente y lo deja caer mediante una explosión energética espectacular.
+
+**Frase inicial:** emisión de sonidos extraterrestres acompañada de subtítulos: "Tu especie será derrotada."
+
+**Frase de victoria:** "Humanos... demasiado predecibles."
+
+**Escenario personal:** interior de un platillo volador, con paneles luminosos, ventanas hacia el espacio, tecnología alienígena y otros grises observando.
+
+---
+
+### 5. ESTADÍSTICAS Y BALANCE
+
+Implementar un sistema de estadísticas con valores entre 1 y 10.
+
+| Personaje | Fuerza | Velocidad | Defensa | Alcance | Técnica |
+|---|---:|---:|---:|---:|---:|
+| Mostasa | 8 | 6 | 7 | 6 | 8 |
+| El Braian | 5 | 10 | 4 | 6 | 8 |
+| The Litlle Rag | 4 | 10 | 4 | 5 | 9 |
+| Patova Marcelo | 10 | 3 | 10 | 7 | 5 |
+| Jenny El Travesaño | 7 | 8 | 6 | 9 | 8 |
+| The Alien | 6 | 7 | 5 | 10 | 9 |
+
+Estas puntuaciones son características relativas, no multiplicadores directos de daño.
+
+Todos los personajes deben empezar con 1000 puntos de vida. Su velocidad, alcance, recuperación y capacidad para absorber daño deben diferenciarse de forma equilibrada.
+
+Ningún personaje debe tener ventajas imposibles de contrarrestar.
+
+---
+
+### 6. SISTEMA DE COMBATE
+
+Crear un sistema de pelea arcade completo con las siguientes mecánicas:
+
+**Movimiento:**
+- Caminar hacia adelante.
+- Caminar hacia atrás.
+- Saltar verticalmente.
+- Saltar hacia adelante.
+- Saltar hacia atrás.
+- Agacharse.
+- Bloquear ataques.
+- Realizar desplazamientos especiales cuando corresponda.
+
+**Ataques básicos:**
+- Puñetazo ligero.
+- Puñetazo fuerte.
+- Patada ligera.
+- Patada fuerte.
+- Ataques agachados.
+- Ataques aéreos.
+- Agarre a corta distancia.
+
+**Sistema avanzado:**
+- Combos con ventanas de cancelación.
+- Ataques especiales únicos.
+- Superataques que consumen energía.
+- Bloqueos altos y bajos.
+- Contraataques.
+- Retroceso al recibir daño.
+- Aturdimiento temporal.
+- Invulnerabilidad breve durante movimientos específicos.
+- Recuperación tras una caída.
+- Separación física entre los luchadores para evitar que se atraviesen.
+- Detección de victoria por KO o tiempo.
+
+Cada personaje debe tener una máquina de estados que contemple, como mínimo:
+
+idle, walking, crouching, jumping, attacking, blocking, hitstun, knockdown, recovering, special, super, victory y defeated.
+
+Respetar prioridades de estados, cancelaciones permitidas y períodos de recuperación.
+
+No permitir movimientos infinitos ni que un personaje siga atacando mientras está derribado.
+
+#### Hitboxes y hurtboxes
+
+Implementar rectángulos o polígonos de colisión independientes de la representación visual.
+
+- Hurtboxes en torso, cabeza y extremidades.
+- Hitboxes activadas solo durante los fotogramas activos del ataque.
+- Desactivación inmediata de golpes fuera de su ventana.
+- Prevención de impactos múltiples no intencionados.
+- Ajuste según orientación del luchador.
+- Detección de bloqueo alto y bajo.
+
+#### Frame data
+
+Cada ataque debe incluir:
+
+- Startup frames.
+- Active frames.
+- Recovery frames.
+- Damage.
+- Hitstun.
+- Blockstun.
+- Pushback.
+- Knockback.
+- Hitstop.
+- Cancel windows.
+- Meter gain.
+
+Valores orientativos:
+
+Puñetazo ligero: 4 frames de preparación, 3 activos, 8 de recuperación, 35 puntos de daño.
+
+Puñetazo fuerte: 9 frames de preparación, 4 activos, 17 de recuperación, 85 puntos de daño.
+
+Patada ligera: 6 frames de preparación, 4 activos, 11 de recuperación, 45 puntos de daño.
+
+Patada fuerte: 11 frames de preparación, 5 activos, 20 de recuperación, 100 puntos de daño.
+
+Los valores finales deben ajustarse según cada personaje.
+
+---
+
+### 7. CONTROLES
+
+El juego debe aceptar controles de teclado, con dos jugadores simultáneos.
+
+**Jugador 1:**
+- W: saltar.
+- A: izquierda.
+- S: agacharse.
+- D: derecha.
+- F: puñetazo ligero.
+- G: puñetazo fuerte.
+- V: patada ligera.
+- B: patada fuerte.
+- C: acceso rápido al primer movimiento especial.
+
+**Jugador 2:**
+- Flecha arriba: saltar.
+- Flecha izquierda: izquierda.
+- Flecha abajo: agacharse.
+- Flecha derecha: derecha.
+- J: puñetazo ligero.
+- K: puñetazo fuerte.
+- N: patada ligera.
+- M: patada fuerte.
+- L: acceso rápido al primer movimiento especial.
+
+**Bloqueo:** mantener la dirección contraria al adversario estando en tierra, con distinción entre bloqueo alto y agachado.
+
+**Movimientos especiales:** reconocer secuencias clásicas como cuarto de círculo hacia adelante más puñetazo, cuarto de círculo hacia atrás más patada y abajo, adelante más puñetazo.
+
+Crear un buffer de inputs que almacene las últimas 15 frames, reconociendo movimientos desde cualquiera de los dos lados del escenario.
+
+Implementar también controles simplificados configurables para ejecutar los movimientos especiales restantes y los superataques sin combinaciones complicadas.
+
+Agregar compatibilidad con gamepad cuando el navegador lo permita.
+
+Los menús deben poder navegarse mediante teclado y mouse.
+
+Mostrar los controles en una pantalla de ayuda.
+
+---
+
+### 8. INTELIGENCIA ARTIFICIAL
+
+Crear una inteligencia artificial real para los adversarios controlados por CPU.
+
+La CPU debe ser capaz de:
+
+- Acercarse al jugador.
+- Retroceder.
+- Mantener distancias estratégicas.
+- Bloquear ataques.
+- Saltar.
+- Atacar con diferentes técnicas.
+- Realizar combos.
+- Ejecutar ataques especiales.
+- Utilizar superataques cuando tenga suficiente energía.
+- Aprovechar errores del jugador.
+- Reaccionar a proyectiles.
+- Variar su comportamiento según la distancia y la situación.
+
+Implementar tres niveles:
+
+**EASY:** CPU lenta, poco agresiva, con tiempos de reacción largos y errores frecuentes.
+
+**NORMAL:** CPU equilibrada, capaz de defenderse, combinar ataques y usar especiales.
+
+**HARD:** CPU agresiva y estratégica, con mejores reacciones, defensa y combos, pero sin leer injustamente los botones del jugador.
+
+La IA debe tener comportamientos diferenciados según su arquetipo.
+
+Ejemplos:
+
+Patova Marcelo busca acercarse para realizar agarres.
+
+The Alien procura mantener distancia y utilizar proyectiles.
+
+El Braian presiona con combinaciones veloces.
+
+Jenny aprovecha el alcance de sus patadas.
+
+The Litlle Rag utiliza movilidad y fintas.
+
+Mostasa alterna presión frontal, defensa y golpes fuertes.
+
+La CPU nunca debe permanecer inmóvil indefinidamente ni ejecutar la misma acción de manera absurda.
+
+---
+
+### 9. SISTEMA DE RONDAS
+
+Cada combate se define al mejor de tres rounds.
+
+Reglas:
+
+- Dos barras de energía visibles.
+- Temporizador de 99 segundos.
+- Indicadores de rounds ganados.
+- Victoria por KO.
+- Victoria por tiempo agotado.
+- Pantalla de empate cuando corresponda.
+- Reinicio correcto de posiciones y energía entre rounds.
+
+Presentaciones visuales clásicas:
+
+**ROUND 1**
+
+**FIGHT!**
+
+**K.O.!**
+
+**YOU WIN!**
+
+**YOU LOSE!**
+
+**PERFECT!**
+
+Utilizar tipografías arcade de gran tamaño, transiciones rápidas y efectos sonoros contundentes.
+
+Agregar un anunciador arcade con voz sintética si existe una API adecuada disponible; de lo contrario, sonidos originales y rótulos animados.
+
+---
+
+### 10. MEDIDOR DE PODER Y SUPERATAQUES
+
+Cada personaje dispone de una barra de energía especial ubicada debajo de su barra de vida.
+
+La barra se carga mediante:
+
+- Golpes acertados.
+- Golpes bloqueados, con ganancia menor.
+- Recibir daño, con ganancia moderada.
+- Determinadas acciones especiales.
+
+El superataque requiere el 100 % de energía.
+
+Al ejecutarse:
+
+1. Se activa una breve pausa dramática.
+2. La pantalla se oscurece ligeramente.
+3. Aparece el nombre del movimiento.
+4. El personaje muestra una animación de preparación.
+5. Se ejecuta el ataque.
+6. La cámara y los efectos visuales resaltan el impacto.
+7. Se consume toda la energía especial.
+
+El superataque debe ser potente, pero bloqueable o evitable según sus propiedades.
+
+No aplicar daño arbitrario sin una detección válida de impacto.
+
+---
+
+### 11. ANIMACIONES COMPLETAS
+
+Cada luchador debe contar con animaciones propias, como mínimo:
+
+- Idle: 6 a 8 poses clave.
+- Caminar: 8 poses.
+- Agacharse: 3 poses.
+- Salto: inicio, ascenso, ápice, descenso y aterrizaje.
+- Puñetazo ligero: 4 a 6 poses.
+- Puñetazo fuerte: 6 a 8 poses.
+- Patada ligera: 5 a 7 poses.
+- Patada fuerte: 6 a 9 poses.
+- Bloqueo: pose diferenciada.
+- Recibir golpe: reacción distinta para golpe ligero y fuerte.
+- Caída: animación de derribo.
+- Recuperación: reincorporación completa.
+- Ataques especiales: animaciones exclusivas.
+- Superataque: secuencia personalizada y elaborada.
+- Victoria: pose y celebración propia.
+- Derrota: caída o desplome final.
+
+Las animaciones deben interpolarse o contar con suficientes poses para que sean fluidas.
+
+**Está terminantemente prohibido que un personaje permanezca visualmente estático mientras se desplaza o ataca.**
+
+Los brazos, piernas, torso y cabeza deben moverse de acuerdo con la acción.
+
+La representación debe transmitir peso, fuerza e impacto, no simplemente cambiar de posición un dibujo.
+
+---
+
+### 12. ESCENARIOS
+
+Crear los seis escenarios asociados a los personajes.
+
+Cada escenario debe incluir:
+
+- Fondo con varios planos de profundidad.
+- Piso visible con perspectiva arcade 2D.
+- Iluminación propia.
+- Objetos ambientales.
+- Elementos animados.
+- Personajes espectadores cuando tenga sentido.
+- Sombras.
+- Movimiento parallax.
+- Detalles característicos de la década de 1990.
+
+Implementar límites laterales y cámara que siga a los combatientes cuando se separan.
+
+La cámara no debe mostrar espacios vacíos fuera del escenario.
+
+Agregar pequeñas vibraciones al recibir impactos poderosos.
+
+La vibración de cámara debe ser configurable y no excesiva.
+
+---
+
+### 13. PANTALLA DE SELECCIÓN DE PERSONAJES
+
+Crear una pantalla de selección visualmente inspirada en los arcades clásicos.
+
+Diseño:
+
+- Fondo dinámico.
+- Seis retratos grandes, originales y expresivos.
+- Cuadrícula de selección de 3 columnas por 2 filas.
+- Nombre del personaje seleccionado.
+- Retrato ampliado.
+- Bandera o procedencia.
+- Descripción breve.
+- Estadísticas representadas mediante barras.
+- Indicadores P1 y P2.
+- Efecto visual al confirmar selección.
+
+Al seleccionar un personaje, debe reproducirse su animación de presentación.
+
+Permitir elegir el mismo luchador para ambos jugadores. En ese caso, aplicar una paleta alternativa que permita distinguirlos claramente.
+
+No deben existir personajes bloqueados inicialmente.
+
+---
+
+### 14. MODOS DE JUEGO
+
+Implementar:
+
+**ARCADE MODE**
+
+El jugador elige un luchador y disputa combates sucesivos contra los otros cinco personajes, con dificultad progresiva.
+
+Mostrar una pantalla VS antes de cada enfrentamiento.
+
+Al finalizar el torneo, mostrar una secuencia de victoria específica del personaje elegido.
+
+**VERSUS MODE**
+
+Dos jugadores humanos utilizando el mismo teclado o gamepads.
+
+Cada jugador elige su personaje.
+
+Permitir seleccionar escenario y cantidad de rounds.
+
+**CPU VERSUS**
+
+Elegir cualquier personaje y luchar directamente contra la inteligencia artificial.
+
+**TRAINING MODE**
+
+Modo de entrenamiento con las siguientes opciones:
+
+- Rival inmóvil, defensivo o controlado por IA.
+- Energía restaurable.
+- Energía especial infinita opcional.
+- Visualización opcional de hitboxes y hurtboxes.
+- Contador de combos.
+- Visualización de daño acumulado.
+- Práctica de movimientos especiales.
+
+**OPTIONS**
+
+Menú para ajustar:
+
+- Volumen musical.
+- Volumen de efectos.
+- Dificultad.
+- Teclas.
+- Scanlines.
+- Vibración de cámara.
+- Escala gráfica.
+- Mostrar controles.
+- Pantalla completa.
+
+---
+
+### 15. MÚSICA Y SONIDOS
+
+Crear una identidad sonora basada en recreativas de mediados de los años 90.
+
+Estética:
+
+- Sintetizadores FM.
+- Percusiones electrónicas.
+- Baterías arcade.
+- Bajos potentes.
+- Riffs de guitarra sintetizada.
+- Efectos de impacto digitales.
+- Sonidos exagerados de puñetazos y patadas.
+
+Cada escenario debería tener una pista de combate diferenciada.
+
+Estilos sugeridos:
+
+- Mostasa: power metal instrumental arcade.
+- El Braian: cumbia electrónica retro con energía de videojuego.
+- The Litlle Rag: punk electrónico frenético.
+- Patova Marcelo: techno industrial noventoso.
+- Jenny El Travesaño: dance y house noventoso.
+- The Alien: música electrónica espacial y oscura.
+
+Utilizar composiciones originales o síntesis programática.
+
+No depender de archivos externos inexistentes.
+
+Si no se pueden generar pistas musicales completas, crear bucles sencillos de música original mediante Web Audio API y priorizar sonidos de combate satisfactorios.
+
+Los golpes deben diferenciarse claramente:
+
+- Impacto ligero.
+- Impacto pesado.
+- Bloqueo.
+- Caída.
+- Proyectil.
+- Energía especial.
+- Superataque.
+- KO.
+
+Los sonidos deben ejecutarse de manera sincronizada con el impacto real.
+
+---
+
+### 16. INTERFAZ DE COMBATE
+
+La interfaz debe reproducir el carácter visual de un arcade de 1996.
+
+Parte superior:
+
+- Retrato y nombre del jugador 1.
+- Barra de energía horizontal.
+- Barra especial.
+- Temporizador central.
+- Barra de energía del jugador 2.
+- Retrato y nombre del jugador 2.
+
+En el centro de la pantalla pueden aparecer:
+
+- ROUND 1.
+- FIGHT!
+- K.O.
+- PERFECT.
+- COMBO x5.
+- SUPER FINISH!
+
+Los indicadores no deben tapar permanentemente a los combatientes.
+
+La barra de vida debe disminuir con una animación suave, mostrando opcionalmente el daño reciente mediante un segmento residual.
+
+Cuando la energía esté baja, permitir un efecto visual de advertencia.
+
+El contador de combos debe reflejar únicamente golpes consecutivos válidos.
+
+---
+
+### 17. SISTEMA DE FÍSICA Y REACCIONES
+
+Crear física arcade coherente:
+
+- Gravedad constante durante los saltos.
+- Velocidad inicial propia del personaje.
+- Movimiento horizontal controlado.
+- Colisiones contra el piso.
+- Límite de salto.
+- Retroceso al recibir impactos.
+- Lanzamiento aéreo con trayectoria definida.
+- Caída y recuperación.
+- Separación entre luchadores.
+- Interacciones correctas con límites del escenario.
+
+Los ataques deben tener sensación de peso.
+
+Agregar:
+
+- Hitstop de pocos frames en impactos.
+- Sacudidas de sprites.
+- Chispas de impacto.
+- Efectos de velocidad.
+- Ondas de energía.
+- Partículas al aterrizar.
+- Estelas durante golpes especiales.
+
+El objetivo es conseguir el impacto visual y la respuesta de control característicos de los mejores juegos arcade de lucha.
+
+---
+
+### 18. MENÚ PRINCIPAL
+
+Al iniciar, mostrar una presentación con estética de máquina recreativa.
+
+Logotipo grande:
+
+**ARCADE FIGHTERS '96**
+
+Subtítulo:
+
+**THE ULTIMATE TOURNAMENT**
+
+Texto inferior parpadeante:
+
+**PRESS START**
+
+Después, mostrar:
+
+- ARCADE MODE
+- VERSUS MODE
+- CPU VERSUS
+- TRAINING
+- OPTIONS
+- HOW TO PLAY
+
+Agregar transiciones, efectos luminosos y sonido al mover la selección.
+
+El menú debe ser completamente funcional, no decorativo.
+
+---
+
+### 19. PRESENTACIONES Y HUMOR ARGENTINO
+
+El videojuego debe incluir personalidad, rivalidades y humor argentino.
+
+Antes de cada combate, mostrar una pantalla VS con retratos y una frase breve.
+
+Incluir pequeños intercambios originales, por ejemplo:
+
+Mostasa contra Patova Marcelo:
+
+- Mostasa: "¿Qué mirás, grandote?"
+- Marcelo: "Con esa pilcha no entrás."
+
+El Braian contra The Alien:
+
+- Braian: "¿De qué barrio sos, loro?"
+- Alien: "Tu planeta será conquistado."
+
+Jenny contra Mostasa:
+
+- Jenny: "Dale, Mostasa, no me hagas perder tiempo."
+- Mostasa: "¡Preparáte para el quilombo!"
+
+The Litlle Rag contra Patova Marcelo:
+
+- Marcelo: "¿Y vos de dónde saliste?"
+- Rag: "¡Del peor de tus sueños!"
+
+Los diálogos pueden ser picantes, exagerados y graciosos, con expresiones argentinas naturales.
+
+Evitar expresiones mexicanas o españolas que no correspondan a los personajes argentinos.
+
+Cada personaje debe tener personalidad propia y frases de victoria distintas.
+
+---
+
+### 20. SECUENCIAS FINALES
+
+Cuando un jugador gana el modo Arcade:
+
+- Mostrar al personaje en primer plano.
+- Reproducir una animación de celebración.
+- Mostrar su nombre en letras grandes.
+- Reproducir música de victoria.
+- Presentar un pequeño epílogo humorístico original.
+- Permitir regresar al menú principal.
+
+Cada personaje debe tener un final diferente.
+
+Agregar créditos ficticios con estética noventosa y el título del juego.
+
+---
+
+### 21. IMPLEMENTACIÓN Y ORGANIZACIÓN DEL CÓDIGO
+
+Separar responsabilidades en módulos:
+
+- GameEngine: bucle central y control de estados.
+- Renderer: dibujo, sprites, fondos, cámara y efectos.
+- InputManager: teclado, gamepad y secuencias.
+- Fighter: entidad base de luchador.
+- CharacterDefinitions: estadísticas y habilidades.
+- CombatSystem: daño, colisiones y reglas de combate.
+- AnimationSystem: animaciones por estados.
+- ProjectileSystem: proyectiles y efectos especiales.
+- AIOpponent: decisiones y dificultad.
+- AudioManager: música y sonidos.
+- MenuSystem: navegación.
+- GameState: modos, rounds, resultados y transición de pantallas.
+
+Utilizar TypeScript con tipos claros.
+
+Evitar variables globales innecesarias, referencias indefinidas, imports rotos y archivos que dependan de recursos inexistentes.
+
+La lógica del juego debe actualizarse independientemente de React. React solo debe administrar la aplicación, el montaje del Canvas y los menús apropiados.
+
+Liberar listeners y recursos al cambiar de pantalla.
+
+Evitar que múltiples game loops se ejecuten simultáneamente.
+
+Respetar la pausa y la pérdida de foco de la ventana.
+
+---
+
+### 22. PRUEBAS FUNCIONALES OBLIGATORIAS
+
+Antes de considerar terminado el proyecto, verificar:
+
+1. La aplicación inicia y muestra el menú correctamente.
+2. Todos los botones del menú funcionan.
+3. Los seis personajes aparecen en selección.
+4. Cada personaje puede seleccionarse.
+5. Cada luchador tiene apariencia distinta.
+6. Todos los personajes caminan, saltan, atacan y se defienden.
+7. Los ataques producen daño únicamente cuando conectan.
+8. Los personajes no se atraviesan.
+9. Las barras de energía se actualizan correctamente.
+10. La CPU se mueve y combate de verdad.
+11. Los especiales propios de cada personaje funcionan.
+12. Los seis superataques pueden ejecutarse.
+13. Los rounds terminan correctamente.
+14. El juego detecta KO y victoria por tiempo.
+15. Puede completarse una partida Arcade.
+16. El modo Versus permite dos jugadores humanos.
+17. Los controles no se quedan pulsados tras perder el foco.
+18. Se puede regresar al menú sin reiniciar la página.
+19. No hay errores fatales en la consola.
+20. El juego conserva una velocidad razonablemente estable.
+21. Los personajes tienen animaciones reales, no desplazamientos de dibujos estáticos.
+22. El juego funciona sin imágenes, bibliotecas o archivos de audio externos que no hayan sido incorporados realmente al proyecto.
+
+Implementar una modalidad de depuración opcional para inspeccionar hitboxes, estados, FPS y eventos de combate.
+
+---
+
+### 23. PRIORIDADES DE DESARROLLO
+
+Trabajar internamente por fases, pero entregar una aplicación integrada y utilizable.
+
+**FASE 1: MOTOR PRINCIPAL**
+
+Crear el Canvas, el game loop, los controles, el sistema de animación, la cámara y el sistema de colisiones.
+
+**FASE 2: COMBATE COMPLETO**
+
+Implementar golpes, defensa, daño, aturdimiento, agarres, combos, energía especial y sistema de rounds.
+
+**FASE 3: LOS SEIS LUCHADORES**
+
+Implementar completamente las seis identidades, con sus estadísticas, sprites, movimientos y superataques.
+
+**FASE 4: INTELIGENCIA ARTIFICIAL**
+
+Crear los comportamientos de la CPU y los tres niveles de dificultad.
+
+**FASE 5: PRESENTACIÓN ARCADE**
+
+Agregar escenarios, menús, retratos, transiciones, música, efectos sonoros y partículas.
+
+**FASE 6: MODOS DE JUEGO**
+
+Integrar Arcade, Versus, CPU Versus, Training y Options.
+
+**FASE 7: TESTING Y OPTIMIZACIÓN**
+
+Revisar y corregir fallas funcionales, gráficas, de controles y de rendimiento.
+
+Si los recursos disponibles impiden terminar alguna función avanzada, entregar primero un juego de combate realmente jugable y estable, sin reemplazar funciones ausentes por controles falsos.
+
+---
+
+### 24. REQUISITOS DE CALIDAD INNEGOCIABLES
+
+**NO HACER LO SIGUIENTE:**
+
+- No generar una página que solo describa el juego.
+- No entregar una maqueta de menú sin combates.
+- No sustituir los personajes por figuras geométricas básicas.
+- No mostrar seis imágenes estáticas fingiendo animaciones.
+- No crear una CPU que simplemente camine hacia adelante.
+- No simular ataques mediante números aleatorios sin colisión.
+- No dejar botones que no hagan nada.
+- No incluir personajes o movimientos que sean únicamente decorativos.
+- No utilizar links a sprites que podrían dejar de funcionar.
+- No declarar que una funcionalidad existe si no está implementada.
+- No dar por terminado un juego con errores de ejecución.
+
+**SÍ HACER LO SIGUIENTE:**
+
+- Construir un videojuego ejecutable.
+- Priorizar jugabilidad y respuesta inmediata.
+- Generar personajes reconocibles.
+- Animar los movimientos correctamente.
+- Implementar ataques con colisiones reales.
+- Crear una CPU funcional.
+- Mantener una estética arcade auténtica.
+- Diseñar seis identidades visuales únicas.
+- Permitir jugar partidas completas.
+- Revisar el código y solucionar problemas detectados.
+
+---
+
+### 25. RESULTADO FINAL ESPERADO
+
+Quiero que al ejecutar la aplicación aparezca una máquina arcade virtual de 1996.
+
+Debo poder presionar START, entrar al selector de personajes, elegir a Mostasa "The Mast Turbadour" Corgnali y enfrentarme, por ejemplo, a Patova Marcelo.
+
+Al comenzar el round debo ver dos personajes bien dibujados y animados, moviéndose con naturalidad, capaces de saltar, defenderse, pegar puñetazos y patadas, ejecutar movimientos especiales y perder energía.
+
+Cuando conecte un golpe fuerte, debe verse claramente el impacto, producir sonido, mostrar partículas, generar retroceso y descontar vida.
+
+La CPU debe responder inteligentemente.
+
+Cuando derrote al adversario, debe aparecer K.O., reproducirse la animación de victoria y ofrecer la continuación correspondiente.
+
+Todo debe recordar visual y funcionalmente a un gran videojuego de lucha arcade de los años 90.
+
+El juego debe contar con sus seis personajes totalmente reconocibles:
+
+1. MOSTASA "THE MAST TURBADOUR" CORGNALI
+2. EL BRAIAN
+3. THE LITLLE RAG
+4. PATOVA MARCELO
+5. JENNY EL TRAVESAÑO
+6. THE ALIEN
+
+**INSTRUCCIÓN FINAL:**
+
+No respondas con una descripción del videojuego ni con una propuesta conceptual. Construí el código completo de la aplicación, integrá todos los módulos necesarios y utilizá la vista previa de Google AI Studio para que el videojuego pueda ejecutarse directamente.
+
+La prioridad máxima es lograr un videojuego 2D arcade visualmente atractivo, con combate real y controles funcionales.
+
+El resultado debe sentirse como un auténtico juego de pelea de 1996, no como una demostración técnica moderna sin personalidad.
+
+**COMENZÁ A DESARROLLAR EL VIDEOJUEGO AHORA.**

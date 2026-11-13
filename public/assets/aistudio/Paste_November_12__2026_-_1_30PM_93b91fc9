@@ -1,0 +1,957 @@
+# ARCADE FIGHTERS '96
+## PROMPT MAESTRO: CREACIÓN E INTEGRACIÓN DE LOS SEIS ESCENARIOS DE COMBATE
+
+### MISIÓN PRINCIPAL
+
+Actuá como un estudio profesional de desarrollo de videojuegos 2D especializado en dirección artística, ilustración digital, pixel art, diseño de escenarios, motores gráficos HTML5 Canvas y videojuegos de lucha arcade de los años 90.
+
+Estás trabajando sobre el proyecto existente:
+
+**ARCADE FIGHTERS '96: THE ULTIMATE TOURNAMENT**
+
+El juego ya cuenta con seis personajes ilustrados, hojas de sprites, sistema de combate, inteligencia artificial, menús, portada, controles y un sistema musical de heavy metal chiptune.
+
+Tu misión es **CREAR LOS SEIS ESCENARIOS ORIGINALES DE COMBATE E INTEGRARLOS AL VIDEOJUEGO EXISTENTE**, conservando absolutamente todas las funcionalidades y recursos desarrollados hasta el momento.
+
+### REGLA FUNDAMENTAL
+
+**NO RECONSTRUIR EL VIDEOJUEGO. NO BORRAR CÓDIGO EXISTENTE. NO REEMPLAZAR PERSONAJES, MENÚS, MÚSICA NI SISTEMAS DE COMBATE.**
+
+Trabajá exclusivamente sobre el sistema de escenarios y los componentes mínimos necesarios para integrarlos.
+
+La prioridad es agregar contenido nuevo sin provocar regresiones.
+
+---
+
+# 1. REFERENCIAS ARTÍSTICAS
+
+Los escenarios deben recordar a los grandes videojuegos de lucha 2D de mediados y finales de los años 90.
+
+Referencias:
+
+- The King of Fighters '96.
+- The King of Fighters '98.
+- Street Fighter Alpha 2.
+- Street Fighter III.
+- Fatal Fury 3.
+- Garou: Mark of the Wolves.
+- Darkstalkers.
+
+Estas referencias son exclusivamente de estilo y calidad artística.
+
+No copiar escenarios protegidos de estos videojuegos.
+
+Crear seis ambientes completamente originales.
+
+## Calidad visual obligatoria
+
+- Ilustraciones 2D profesionales.
+- Estética de videojuegos arcade de 1995 a 1999.
+- Pixel art detallado o ilustración 2D rasterizada con estética pixel art.
+- Colores intensos y coherentes.
+- Arquitectura correctamente dibujada.
+- Perspectiva convincente.
+- Profundidad ambiental.
+- Sombreado y luces.
+- Texturas de paredes, pisos y objetos.
+- Elementos secundarios reconocibles.
+- Efectos ambientales.
+- Animación de fondo cuando corresponda.
+
+**NO QUIERO ESCENARIOS HECHOS CON RECTÁNGULOS DE COLORES, CÍRCULOS, LÍNEAS O FIGURAS GEOMÉTRICAS ELEMENTALES.**
+
+Los fondos deben parecer ilustraciones elaboradas profesionalmente.
+
+No utilizar fotografías modernas como fondo sin tratamiento gráfico.
+
+No crear espacios vacíos con simples degradados.
+
+---
+
+# 2. SISTEMA DE ESCENARIOS
+
+Crear exactamente seis escenarios iniciales.
+
+Cada escenario corresponde a un personaje jugable.
+
+| Personaje | Nombre del escenario | Ambientación |
+|---|---|---|
+| Mostasa | METAL FIGHT CLUB | Gimnasio de boxeo argentino |
+| El Braian | BARRIO BRAVO | Esquina urbana argentina |
+| The Litlle Rag | RAG'S NIGHTMARE | Fábrica abandonada de juguetes |
+| Patova Marcelo | NO ENTRY CLUB | Entrada de un boliche de los 90 |
+| Jenny El Travesaño | GLAMOUR ARENA | Escenario nocturno de variedades |
+| The Alien | AREA 51: MOTHERSHIP | Interior de nave extraterrestre |
+
+Los seis escenarios deben ser visualmente diferentes.
+
+Todos deben compartir una dirección artística coherente con el videojuego.
+
+---
+
+# 3. ESCENARIO 1: MOSTASA
+## METAL FIGHT CLUB
+
+### Ambientación
+
+Un gimnasio de boxeo ubicado en Reconquista, Santa Fe, Argentina, durante la década de 1990.
+
+El escenario debe transmitir una atmósfera masculina, ruda, deportiva y vinculada al heavy metal.
+
+### Composición visual
+
+**Primer plano:**
+
+- Piso de gimnasio desgastado.
+- Marcas de zapatillas y entrenamiento.
+- Sombras de los luchadores.
+- Líneas de perspectiva.
+- Algunos detalles de polvo en el suelo.
+
+**Plano intermedio:**
+
+- Zona de entrenamiento amplia.
+- Bolsas de boxeo colgadas.
+- Bancos de entrenamiento.
+- Mancuernas.
+- Guantes y elementos deportivos.
+- Cuerdas de boxeo o un ring visible parcialmente.
+
+**Fondo:**
+
+- Paredes de ladrillo.
+- Posters ficticios de bandas de heavy metal.
+- Amplificadores.
+- Banderas argentinas.
+- Ventiladores industriales.
+- Tubos fluorescentes.
+- Espectadores observando el combate.
+
+### Iluminación
+
+Luz amarillenta de gimnasio antiguo, con zonas de sombra, luces superiores y algunos acentos rojos.
+
+### Animaciones ambientales
+
+- Bolsas moviéndose lentamente.
+- Ventiladores girando.
+- Luces fluorescentes con variaciones sutiles.
+- Espectadores realizando pequeños movimientos.
+- Partículas de polvo iluminadas.
+
+### Identidad musical
+
+Power metal melódico instrumental en 8 bits.
+
+**Sensación buscada:** un lugar donde un boxeador metalero se prepara para pelear sin reglas.
+
+---
+
+# 4. ESCENARIO 2: EL BRAIAN
+## BARRIO BRAVO
+
+### Ambientación
+
+Una esquina de un barrio popular argentino durante una noche de verano de 1996.
+
+El ambiente debe tener identidad urbana argentina y sensación de pelea callejera.
+
+### Composición visual
+
+**Primer plano:**
+
+- Calle de asfalto.
+- Grietas.
+- Cordón de vereda.
+- Algunas baldosas desgastadas.
+- Reflejos de iluminación pública.
+
+**Plano intermedio:**
+
+- Kiosco de barrio iluminado.
+- Motos pequeñas estacionadas.
+- Bicicletas.
+- Vecinos observando.
+- Cables eléctricos.
+- Postes.
+- Paredes con murales de arte urbano.
+
+**Fondo:**
+
+- Casas bajas argentinas.
+- Techos de chapa y tejas.
+- Árboles.
+- Luces cálidas en ventanas.
+- Luna nocturna.
+- Carteles comerciales ficticios.
+- Una calle que continúa hacia el horizonte.
+
+### Iluminación
+
+Combinación de:
+
+- Alumbrado público anaranjado.
+- Luces blancas del kiosco.
+- Iluminación azul de la noche.
+- Pequeños reflejos en el pavimento.
+
+### Animaciones ambientales
+
+- Luces de motos.
+- Árboles moviéndose.
+- Vecinos reaccionando a la pelea.
+- Algún perro caminando en el fondo.
+- Papeles arrastrados por el viento.
+
+### Identidad musical
+
+Heavy metal callejero con elementos electrónicos de 8 bits.
+
+**Sensación buscada:** una pelea improvisada en una esquina de barrio argentino.
+
+---
+
+# 5. ESCENARIO 3: THE LITLLE RAG
+## RAG'S NIGHTMARE
+
+### Ambientación
+
+Una antigua fábrica de juguetes abandonada, oscura, misteriosa y ligeramente terrorífica.
+
+Debe tener una estética que combine humor macabro y horror caricaturesco de videojuegos de los años 90.
+
+### Composición visual
+
+**Primer plano:**
+
+- Suelo de madera deteriorada.
+- Retazos de tela.
+- Juguetes rotos.
+- Pequeñas piezas mecánicas.
+- Sombras alargadas.
+
+**Plano intermedio:**
+
+- Cintas transportadoras.
+- Máquinas industriales antiguas.
+- Mesas de trabajo.
+- Muñecos abandonados.
+- Cajas de juguetes.
+- Brazos mecánicos inactivos.
+- Televisores de tubo.
+
+**Fondo:**
+
+- Estanterías gigantes.
+- Ventanas industriales rotas.
+- Engranajes.
+- Relojes antiguos.
+- Sombras de juguetes.
+- Carteles descoloridos.
+- Una enorme figura de muñeco observando desde la oscuridad.
+
+### Iluminación
+
+- Tonos rojizos.
+- Iluminación violeta.
+- Luces verdes intermitentes.
+- Sombras profundas.
+- Contrastes dramáticos.
+
+### Animaciones ambientales
+
+- Ojos luminosos de juguetes.
+- Engranajes girando.
+- Un televisor con interferencias.
+- Muñecos balanceándose.
+- Pequeñas luces que parpadean.
+- Polvo flotando.
+
+### Identidad musical
+
+Speed metal chiptune rápido, caótico y ligeramente siniestro.
+
+**Sensación buscada:** un lugar donde los juguetes abandonados parecen tener vida propia.
+
+---
+
+# 6. ESCENARIO 4: PATOVA MARCELO
+## NO ENTRY CLUB
+
+### Ambientación
+
+La entrada de un boliche argentino durante una noche de 1996.
+
+El escenario debe representar la cultura nocturna de aquella década.
+
+### Composición visual
+
+**Primer plano:**
+
+- Vereda amplia.
+- Baldosas oscuras.
+- Algunos charcos con reflejos.
+- Luces rojas y violetas sobre el suelo.
+
+**Plano intermedio:**
+
+- Entrada principal de un boliche.
+- Puertas dobles.
+- Cordones de seguridad.
+- Barreras metálicas.
+- Carteles de admisión.
+- Otro patovica de fondo.
+- Personas esperando para ingresar.
+- Un cartel luminoso ficticio con el nombre del boliche.
+
+**Fondo:**
+
+- Fachada del local.
+- Luces de neón.
+- Ventanas oscuras.
+- Autos de los años 90 estacionados.
+- Estructuras metálicas.
+- Columnas.
+- Humo que sale desde la entrada.
+
+### Iluminación
+
+- Rojo intenso.
+- Azul eléctrico.
+- Violeta.
+- Reflejos de neón.
+- Luces estroboscópicas lejanas.
+
+### Animaciones ambientales
+
+- Luces de neón intermitentes.
+- Reflejos en el suelo.
+- Personas moviéndose al ritmo de la música.
+- Humo saliendo del boliche.
+- Puertas que se abren ocasionalmente.
+
+### Identidad musical
+
+Heavy metal industrial pesado de 8 bits.
+
+**Sensación buscada:** una pelea frente a la entrada de un boliche donde Patova Marcelo decide quién entra y quién no.
+
+---
+
+# 7. ESCENARIO 5: JENNY EL TRAVESAÑO
+## GLAMOUR ARENA
+
+### Ambientación
+
+Un escenario nocturno de espectáculos y variedades de los años 90, con estética glam rock, luces teatrales y una atmósfera extravagante.
+
+Jenny es una mujer travesti argentina, carismática, elegante y poderosa. El escenario debe representar su presencia escénica sin convertir su identidad en una caricatura.
+
+### Composición visual
+
+**Primer plano:**
+
+- Piso brillante.
+- Reflejos de neón.
+- Líneas de luces.
+- Pequeños detalles cromados.
+
+**Plano intermedio:**
+
+- Escenario de espectáculos.
+- Columnas decorativas.
+- Cortinas de terciopelo.
+- Escaleras laterales.
+- Reflectores.
+- Espejos.
+- Pantallas luminosas.
+- Elementos glamorosos propios de los años 90.
+
+**Fondo:**
+
+- Gran telón fucsia.
+- Estructuras de iluminación.
+- Luces de colores.
+- Siluetas de espectadores.
+- Decoraciones de estrellas.
+- Paneles espejados.
+- Un gran letrero luminoso ficticio.
+
+### Iluminación
+
+- Fucsia.
+- Violeta.
+- Plateado.
+- Azul intenso.
+- Blanco brillante.
+
+### Animaciones ambientales
+
+- Reflectores desplazándose.
+- Destellos luminosos.
+- Cortinas moviéndose ligeramente.
+- Brillos de espejos.
+- Público aplaudiendo.
+- Humo teatral.
+
+### Identidad musical
+
+Glam metal de los años 80 adaptado a sintetizadores de 8 bits, con solos virtuosos y melodías pegadizas.
+
+**Sensación buscada:** una espectacular arena de combate con glamour, elegancia y energía de rock ochentoso.
+
+---
+
+# 8. ESCENARIO 6: THE ALIEN
+## AREA 51: MOTHERSHIP
+
+### Ambientación
+
+Interior de una enorme nave extraterrestre.
+
+Debe transmitir tecnología avanzada, misterio cósmico y una atmósfera inquietante.
+
+### Composición visual
+
+**Primer plano:**
+
+- Plataforma metálica futurista.
+- Piso con circuitos luminosos.
+- Paneles geométricos tecnológicos.
+- Reflejos azulados y verdosos.
+- Pequeñas líneas de energía.
+
+**Plano intermedio:**
+
+- Consolas extraterrestres.
+- Pantallas holográficas.
+- Dispositivos de navegación.
+- Conductos luminosos.
+- Máquinas desconocidas.
+- Cámaras de experimentación.
+- Otros extraterrestres grises observando.
+
+**Fondo:**
+
+- Ventanales gigantes.
+- Vista del espacio exterior.
+- La Tierra visible a la distancia.
+- Estrellas.
+- Nebulosas.
+- Tecnología de la nave.
+- Puertas circulares futuristas.
+
+### Iluminación
+
+- Verde neón.
+- Azul cian.
+- Blanco frío.
+- Violeta oscuro.
+- Resplandores energéticos.
+
+### Animaciones ambientales
+
+- Luces circulando por los paneles.
+- Pantallas holográficas.
+- Estrellas moviéndose lentamente.
+- Destellos eléctricos.
+- Pulsaciones de energía.
+- Movimiento sutil del espacio exterior.
+
+### Identidad musical
+
+Heavy metal espacial en 8 bits, con arpegios oscuros, sintetizadores misteriosos y riffs agresivos.
+
+**Sensación buscada:** una pelea dentro de una nave extraterrestre de tecnología desconocida.
+
+---
+
+# 9. CALIDAD GRÁFICA Y RESOLUCIÓN
+
+Los seis escenarios deben compartir la misma dirección artística que los personajes ya existentes.
+
+Los fondos deben tener mayor detalle ambiental, pero no competir visualmente con los luchadores.
+
+### Resolución de referencia
+
+El motor utiliza una resolución lógica de aproximadamente:
+
+**960 × 540 píxeles, relación 16:9.**
+
+Crear los recursos gráficos originales a mayor resolución siempre que sea posible.
+
+Recomendación:
+
+- Fondo estático principal: 1920 × 1080 píxeles.
+- Resolución superior cuando el generador lo permita.
+- Relación de aspecto compatible con el juego.
+- Capas transparentes independientes para elementos animados.
+- Recursos preparados para reducirse sin perder excesiva claridad.
+
+Si el escenario permite desplazamiento horizontal de cámara, generar un ancho adicional de mundo, o extenderlo mediante capas compatibles, sin estirar las imágenes ni inventar contenido fuera de sus límites.
+
+No asumir que una ilustración de 1920 × 1080 puede desplazarse horizontalmente de manera ilimitada.
+
+---
+
+# 10. COMPOSICIÓN PARA COMBATE
+
+Los escenarios no son ilustraciones decorativas.
+
+**DEBEN ESTAR DISEÑADOS PARA QUE DOS PERSONAJES PUEDAN PELEAR CORRECTAMENTE EN PRIMER PLANO.**
+
+Cada escenario necesita:
+
+- Superficie de combate claramente identificada.
+- Suelo visualmente coherente.
+- Espacio lateral suficiente.
+- Fondo que no obstaculice la lectura de los luchadores.
+- Perspectiva estable.
+- Altura de suelo consistente.
+- Área despejada para movimientos especiales.
+- Espacio vertical para saltos.
+- Visibilidad de las barras de energía.
+
+### Regla de composición
+
+Reservar aproximadamente el 75 % inferior del ancho visible como zona de lectura del combate, manteniendo libre de obstáculos gráficos dominantes el espacio que ocuparán los luchadores.
+
+El suelo debe situarse alrededor del 88 al 91 % de la altura lógica, dependiendo de las coordenadas actuales del motor.
+
+No modificar arbitrariamente el punto de apoyo de los personajes.
+
+Adaptar el dibujo del escenario al piso del sistema de combate existente.
+
+### Prohibiciones
+
+- No dibujar luchadores dentro del fondo.
+- No incrustar barras de vida en la ilustración.
+- No agregar controles dentro de las imágenes.
+- No ubicar grandes objetos delante de los personajes.
+- No cubrir las cabezas con efectos.
+- No colocar columnas que oculten la zona central.
+- No cambiar la escala de los luchadores para compensar un fondo mal diseñado.
+
+---
+
+# 11. SISTEMA DE PROFUNDIDAD Y PARALLAX
+
+Crear un sistema de escenarios por capas.
+
+Cada escenario debería disponer, idealmente, de:
+
+**CAPA 1: BACKGROUND FAR**
+
+Elementos muy lejanos como cielo, ciudad, espacio o arquitectura de fondo.
+
+Movimiento de parallax lento.
+
+**CAPA 2: BACKGROUND MID**
+
+Paredes, estructuras, edificios, máquinas y decoración intermedia.
+
+Movimiento de parallax moderado.
+
+**CAPA 3: BACKGROUND NEAR**
+
+Elementos cercanos a la zona de combate.
+
+Movimiento vinculado al desplazamiento de cámara.
+
+**CAPA 4: FIGHT FLOOR**
+
+Superficie donde se apoyan los personajes.
+
+Debe permanecer alineada con la física.
+
+**CAPA 5: AMBIENT EFFECTS**
+
+Partículas, luces, humo y animaciones ambientales.
+
+### Orden de renderizado
+
+1. Fondo lejano.
+2. Fondo intermedio.
+3. Arquitectura cercana.
+4. Suelo.
+5. Sombras de personajes.
+6. Personajes.
+7. Efectos de combate.
+8. Interfaz del juego.
+
+Los efectos ambientales de primer plano, si existen, deben mantener una opacidad moderada y no ocultar las acciones del combate.
+
+---
+
+# 12. GENERACIÓN DE LOS RECURSOS GRÁFICOS
+
+**QUIERO QUE CREES LAS ILUSTRACIONES DE LOS SEIS ESCENARIOS, NO QUE SOLAMENTE ESCRIBAS SUS DESCRIPCIONES.**
+
+Primero comprobá qué capacidades de generación de imágenes y edición de recursos están disponibles en este entorno.
+
+Si podés generar imágenes directamente, utilizá esas capacidades y guardá los seis fondos como recursos reales dentro del proyecto.
+
+Si no disponés de un generador de imágenes accesible, desarrollá ilustraciones originales de calidad mediante técnicas 2D viables, como SVG complejos, texturas procedimentales detalladas y capas dibujadas, siempre que el resultado cumpla los requisitos artísticos.
+
+No reemplazar las ilustraciones por simples degradados y rectángulos.
+
+No depender de imágenes de terceros alojadas en URLs temporales.
+
+Si no podés producir fondos con suficiente calidad, informá con precisión la limitación, conservá intacto el juego existente y dejá preparada la arquitectura de carga de escenarios, sin afirmar que las imágenes definitivas están creadas.
+
+---
+
+# 13. SISTEMA DE ASOCIACIÓN DE ESCENARIOS
+
+Crear un registro centralizado de escenarios.
+
+Ejemplo de estructura:
+
+```typescript
+interface StageDefinition {
+  id: string;
+  name: string;
+  ownerCharacterId: string;
+  backgroundLayers: string[];
+  musicTrackId: string;
+  floorY: number;
+  worldWidth: number;
+  worldHeight: number;
+  ambientEffects: string[];
+}
+```
+
+Registrar exactamente:
+
+```typescript
+const stageCharacterMap = {
+  mostasa: "metal_fight_club",
+  el_braian: "barrio_bravo",
+  the_litlle_rag: "rags_nightmare",
+  patova_marcelo: "no_entry_club",
+  jenny_el_travesano: "glamour_arena",
+  the_alien: "area_51_mothership"
+};
+```
+
+Adaptar los identificadores a los datos existentes del proyecto si ya existe una nomenclatura diferente.
+
+### Selección de escenario
+
+Cuando se elija un personaje o se inicie un combate:
+
+- Cargar el escenario correspondiente según las reglas del modo de juego.
+- En Arcade, utilizar preferentemente el escenario del rival.
+- En Versus, permitir elegir el escenario si la interfaz ya contempla esa opción.
+- En VS CPU, permitir utilizar el escenario del rival o del personaje seleccionado, según las reglas existentes.
+- En entrenamiento, conservar el escenario elegido o el definido por el modo.
+
+No cambiar el escenario durante un round.
+
+No alterar la selección de personajes.
+
+---
+
+# 14. INTEGRACIÓN CON EL MOTOR EXISTENTE
+
+Localizá el sistema actual de renderizado del escenario.
+
+Reemplazá o ampliá únicamente el dibujo del fondo.
+
+**NO MODIFIQUES:**
+
+- Los sprites de Mostasa.
+- Los sprites de El Braian.
+- Los sprites de The Litlle Rag.
+- Los sprites de Patova Marcelo.
+- Los sprites de Jenny El Travesaño.
+- Los sprites de The Alien.
+- Los controles.
+- Las hitboxes.
+- Las hurtboxes.
+- La física.
+- Las barras de vida.
+- Los ataques.
+- Los combos.
+- Los superataques.
+- La inteligencia artificial.
+- La música existente.
+- La portada.
+- El menú principal.
+- El selector de personajes.
+
+Si resulta necesario realizar una adaptación mínima, documentá exactamente qué se modifica y por qué.
+
+No cambiar el motor de combate para ajustarlo a una ilustración.
+
+El escenario debe adaptarse al sistema de combate.
+
+---
+
+# 15. CÁMARA Y DESPLAZAMIENTO
+
+Utilizar la cámara del videojuego existente.
+
+Los escenarios deben adaptarse al desplazamiento horizontal cuando los luchadores se separen.
+
+Requisitos:
+
+- Cámara centrada entre ambos luchadores cuando sea posible.
+- Límites de cámara correctamente definidos.
+- Sin espacios negros a los lados.
+- Sin deformación del fondo.
+- Parallax proporcional.
+- Sin movimientos bruscos.
+- Sin cambios de escala durante el combate.
+
+Si un escenario solo dispone de una imagen estática 16:9, limitar el desplazamiento de cámara a lo que permita el recurso sin descubrir áreas vacías.
+
+No simular desplazamiento ampliando y deformando el fondo excesivamente.
+
+---
+
+# 16. ANIMACIONES AMBIENTALES
+
+Agregar movimiento secundario para que los escenarios parezcan vivos.
+
+Las animaciones deben funcionar independientemente de los personajes.
+
+Implementar un sistema de ambientación que pueda:
+
+- Reproducir sprites ambientales.
+- Animar luces.
+- Mostrar partículas.
+- Desplazar humo.
+- Animar espectadores.
+- Activar efectos ocasionales.
+- Coordinar eventos ambientales.
+
+### Restricción de rendimiento
+
+Los elementos ambientales nunca deben afectar de forma importante la fluidez del combate.
+
+No ejecutar animaciones innecesarias cuando el escenario no está visible.
+
+Usar efectos sutiles y optimizados.
+
+No convertir todo el fondo en una animación continua excesivamente pesada.
+
+---
+
+# 17. ILUMINACIÓN Y LEGIBILIDAD
+
+Los personajes deben distinguirse claramente del escenario.
+
+Implementar, si hace falta:
+
+- Sombras suaves debajo de sus pies.
+- Separación tonal entre fondo y personaje.
+- Atenuación ligera de detalles ambientales cercanos.
+- Iluminación ambiental sutil.
+- Contraste apropiado.
+
+No aplicar filtros agresivos a los sprites originales.
+
+No modificar sus colores principales.
+
+No introducir un sistema de luces que oscurezca a los luchadores.
+
+Los escenarios deben verse espectaculares, pero el centro visual del combate son siempre los personajes.
+
+---
+
+# 18. INTEGRACIÓN MUSICAL
+
+Cada escenario debe reproducir el tema musical correspondiente ya definido para el juego.
+
+| Escenario | Tema musical |
+|---|---|
+| Metal Fight Club | The Mast Turbadour |
+| Barrio Bravo | Streets of Fury |
+| Rag's Nightmare | Ragged Madness |
+| No Entry Club | No Entry Tonight |
+| Glamour Arena | Glamour of Steel |
+| Area 51: Mothership | Cosmic Annihilation |
+
+Utilizar el AudioManager existente.
+
+No reemplazarlo.
+
+No generar nuevos sistemas musicales redundantes.
+
+Si una pista todavía no está implementada, mantener su identificador y utilizar el comportamiento de audio de respaldo ya previsto en el proyecto.
+
+---
+
+# 19. ESTRUCTURA DE ARCHIVOS
+
+Organizar los recursos sin borrar carpetas anteriores.
+
+Ejemplo:
+
+```text
+public/
+  assets/
+    stages/
+      metal_fight_club/
+        background.png
+        layers/
+
+      barrio_bravo/
+        background.png
+        layers/
+
+      rags_nightmare/
+        background.png
+        layers/
+
+      no_entry_club/
+        background.png
+        layers/
+
+      glamour_arena/
+        background.png
+        layers/
+
+      area_51_mothership/
+        background.png
+        layers/
+```
+
+Los archivos deben generarse realmente.
+
+No crear referencias ficticias a recursos que no existen.
+
+Si se utilizan capas, asignar nombres claros y conservar la transparencia necesaria.
+
+---
+
+# 20. PREVISUALIZADOR DE ESCENARIOS
+
+Agregar una herramienta de desarrollo para revisar los seis fondos.
+
+Debe permitir:
+
+- Elegir escenario.
+- Mostrar el fondo completo.
+- Activar o desactivar capas.
+- Mostrar la línea de suelo.
+- Mostrar los límites del escenario.
+- Activar el parallax.
+- Activar efectos ambientales.
+- Mostrar dos personajes de prueba utilizando sus sprites existentes.
+- Comprobar la escala.
+- Verificar el desplazamiento de cámara.
+
+Este visualizador no debe sustituir los modos de juego ni aparecer forzosamente en el menú principal.
+
+Debe servir para validar la integración.
+
+---
+
+# 21. PROTECCIÓN DEL TRABAJO EXISTENTE
+
+Antes de implementar:
+
+1. Inspeccioná todos los archivos relevantes.
+2. Identificá las funciones y componentes actuales.
+3. Conservá una referencia recuperable del estado funcional del proyecto, utilizando las capacidades de control de versiones o historial que estén disponibles.
+4. Definí qué archivos necesitan cambios.
+5. Evitá modificar archivos ajenos a la tarea.
+6. No reescribas módulos completos si alcanza con una modificación localizada.
+
+Durante la implementación:
+
+- No borrar sprites.
+- No reemplazar assets de interfaz.
+- No eliminar rutas.
+- No modificar los controles.
+- No alterar la inteligencia artificial.
+- No tocar las reglas de daño.
+- No modificar el sistema de rounds.
+- No desactivar modos.
+- No reemplazar la banda sonora.
+
+Al finalizar, comprobar que el juego conserva su funcionalidad anterior.
+
+---
+
+# 22. PRUEBAS OBLIGATORIAS
+
+Comprobar:
+
+1. Los seis escenarios existen como recursos gráficos reales.
+2. Cada escenario tiene una identidad visual reconocible.
+3. Los escenarios se cargan correctamente.
+4. No hay fondos blancos ni recursos ausentes.
+5. La escala es correcta.
+6. Los luchadores aparecen delante de los fondos.
+7. Sus pies coinciden con el suelo.
+8. Pueden caminar y saltar.
+9. Pueden atacar y defenderse.
+10. La CPU conserva su funcionamiento.
+11. Las barras de vida permanecen visibles.
+12. Los efectos de combate no quedan ocultos.
+13. La cámara no muestra bordes vacíos.
+14. Las animaciones ambientales funcionan.
+15. El rendimiento es estable.
+16. Cada personaje tiene asignado su escenario.
+17. Los combates utilizan el fondo correcto.
+18. La portada continúa funcionando.
+19. El menú principal continúa funcionando.
+20. La selección de personajes sigue funcionando.
+21. Los controles no cambiaron.
+22. La música continúa funcionando.
+23. Los modos Arcade y Versus pueden ejecutarse.
+24. No existen errores fatales en la consola.
+25. No se han eliminado recursos desarrollados anteriormente.
+
+Si alguna prueba no puede ejecutarse, indicarlo expresamente.
+
+---
+
+# 23. RESULTADO ESPERADO
+
+Cuando seleccione a Mostasa y comience un combate en su escenario, quiero verlo dentro de un gimnasio de boxeo argentino detallado, con bolsas, iluminación, paredes, público y una atmósfera heavy metal.
+
+Cuando pelee con El Braian, quiero reconocer inmediatamente una esquina de barrio argentino.
+
+Cuando aparezca The Litlle Rag, quiero encontrarme con una fábrica de juguetes abandonada.
+
+Cuando pelee con Patova Marcelo, quiero verlo frente a un boliche nocturno de los años 90.
+
+Cuando seleccione a Jenny, quiero combatir en una arena glamorosa llena de luces y reflejos.
+
+Cuando aparezca The Alien, quiero encontrarme dentro de una gigantesca nave extraterrestre.
+
+Los escenarios deben parecer pertenecientes al mismo videojuego y compartir la calidad artística de los personajes ya creados.
+
+**NO QUIERO SEIS FONDOS GENÉRICOS. QUIERO SEIS ESCENARIOS PROFESIONALES DE ARCADE, CON IDENTIDAD PROPIA.**
+
+---
+
+# INSTRUCCIÓN FINAL
+
+Tu misión no consiste en diseñar conceptualmente los escenarios.
+
+**DEBÉS CREARLOS VISUALMENTE E INTEGRARLOS AL VIDEOJUEGO.**
+
+Priorizá la generación de las seis imágenes originales mediante las capacidades gráficas disponibles en Google AI Studio.
+
+No reemplaces las imágenes con simples figuras geométricas.
+
+No modifiques ni elimines recursos existentes.
+
+No reconstruyas la aplicación desde cero.
+
+Creá un sistema de escenarios visualmente profesional y compatible con el motor actual.
+
+Primero inspeccioná el código y los recursos disponibles.
+
+Después creá los seis escenarios.
+
+Finalmente, integrá y verificá su funcionamiento.
+
+Al terminar, mostrá los seis escenarios para su evaluación visual y detallá qué recursos se crearon, qué archivos se modificaron y qué pruebas pudiste realizar.
+
+**EL OBJETIVO ES TRANSFORMAR ARCADE FIGHTERS '96 EN UN VIDEOJUEGO DE PELEA CON SEIS ESCENARIOS COMPLETAMENTE ORIGINALES, DETALLADOS Y FUNCIONALES, SIN PERDER ABSOLUTAMENTE NADA DE LO QUE YA FUE DESARROLLADO.**
