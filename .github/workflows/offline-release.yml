@@ -1,0 +1,47 @@
+name: Publicar HTML sin conexión
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/offline-release.yml]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Etiqueta de la Release (por ejemplo, offline-v0.1.0)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.tag || 'offline-v0.1.0' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright-core install --with-deps chromium
+      - run: npm run build:offline
+      - run: npm run test:offline
+      - name: Publicar y verificar la descarga
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^offline-v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          asset=dist/arcade-fighters-96.html
+          gh release create "$RELEASE_TAG" "$asset" \
+            --target "$GITHUB_SHA" \
+            --title "Arcade Fighters '96 · HTML sin conexión" \
+            --notes 'Descargá arcade-fighters-96.html y abrilo directamente en el navegador. Incluye el juego y sus recursos en un único archivo.'
+          download_dir=$(mktemp -d)
+          curl --fail --silent --show-error --location \
+            "https://github.com/$GITHUB_REPOSITORY/releases/download/$RELEASE_TAG/arcade-fighters-96.html" \
+            --output "$download_dir/arcade-fighters-96.html"
+          cmp "$asset" "$download_dir/arcade-fighters-96.html"
